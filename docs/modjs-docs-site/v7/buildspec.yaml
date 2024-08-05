@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm install react
+      - npm install react-dom
+      - npm install react-router-dom
+      - npm install styled-components
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - |
+        renamed_files=$(find out -type f -name "*.html" -exec sh -c 'mv "$1" "${1%.html}" && echo "${1%.html}"' _ {} \;)
+        for file in $renamed_files; do
+          aws s3 cp "${file}" "s3://www.pilotpro.io/$(basename $file)" --content-type "text/html" --metadata-directive="REPLACE"
+        done
+        aws s3 sync "out/" "s3://www.pilotpro.io/" --delete --include "*" --exclude "$(basename -a $renamed_files)"
