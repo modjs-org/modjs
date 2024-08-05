@@ -46,7 +46,7 @@
     "build:core": "npm run build --workspace @modjs/core",
     "prePublish:core": "npm run prePublish --workspace @modjs/core",
     "publish:core": "npm run publish --workspace @modjs/core",
-    "build:all": "npm-run-all -s build:helpers build:utils build:icons build:core build:docs-site"
+    "build:all": "npm-run-all -s build:helpers build:utils build:icons build:core build:docs"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.5",
