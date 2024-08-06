@@ -25,9 +25,6 @@ const ModAppbar = styled.header.withConfig({
         width: 100%;
 
     `};
-    @media (max-width: 768px) {
-        display: none;
-    }
 `
 
 const Appbar = (

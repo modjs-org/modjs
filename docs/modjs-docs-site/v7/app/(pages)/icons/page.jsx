@@ -16,8 +16,8 @@ import {
 } from '@modjs/core'
 import { RightChevronIcon, ReactIcon, TerminalIcon } from '@modjs/icons'
 import ThemeWrapper from '../../wrappers/ThemeWrapper'
-import Navbar from '../../(common)/Navbar'
 import ModFooter from '../../(common)/Footer'
+import Navbar from '../../(common)/Navbar'
 
 const exampleCode = [
     {
@@ -65,7 +65,7 @@ export default function Page() {
     return (
         <ThemeWrapper>
             <Layout>
-                <Navbar />
+                <Navbar currentPage="root/icons" />
                 <Section id="intro">
                     <Container>
                         <Box pt={30} pb={64}>

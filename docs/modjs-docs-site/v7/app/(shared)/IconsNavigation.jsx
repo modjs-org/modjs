@@ -65,9 +65,8 @@ const IconsNavigation = () => {
 
     return (
         <>
-            <Link variant="icon" mb={8}>
-                Github Repository
-                <GithubIcon />
+            <Link variant="icon" mb={16}>
+                Github Repository <GithubIcon />
             </Link>
             {/* Getting Started */}
             <Accordion

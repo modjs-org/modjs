@@ -161,7 +161,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                 >
                     <TooltipContent displayPosition="left">
                         <Typography variant="small" color="white">
-                            Search...
+                            Toggle Search Modal
                         </Typography>
                     </TooltipContent>
                 </Tooltip>

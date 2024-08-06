@@ -8,7 +8,7 @@ interface ModSideNavigationProps {
 }
 
 const ModSideNavigation = styled.nav<ModSideNavigationProps>`
-    width: 300px;
+    width: 250px;
     height: calc(100vh - 90px);
     position: sticky;
     top: 70px;

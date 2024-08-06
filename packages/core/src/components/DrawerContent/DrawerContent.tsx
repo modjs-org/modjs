@@ -27,7 +27,6 @@ const ModDrawerContent = styled.div.withConfig({
     scrollbar-color: ${props => props.theme.scrollbarColor};
     z-index: 3;
     position: fixed;
-    padding: 8px;
     background-color: ${props => props.theme.mode};
     overflow: auto;
     ${props =>
@@ -44,7 +43,7 @@ const ModDrawerContent = styled.div.withConfig({
         props.displayPosition === 'left' &&
         `
         border-right: ${props.theme.border.dark};
-        width: 300px;
+        width: auto;
         // width: max-content;
         left: ${props.isOpen ? '0' : '-100%'};
         transition: ${!props.disableTransition && `left 0.3s ease-out`} ;
@@ -96,33 +95,41 @@ const DrawerContent = (
             disableTransition={disableTransition === true ? true : false}
             data-test="drawer-content"
         >
-            <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                gap={16}
-                mb={16}
-            >
-                {title}
-
-                {toggleClose ? (
-                    <Box
-                        onClick={toggleDrawer}
-                        data-testid="custom-toggle-close-drawerContent"
-                    >
-                        {toggleClose}
+            <Box>
+                <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    gap={16}
+                    mb={0}
+                    borderBottom="dark"
+                >
+                    <Box px={16} py={8}>
+                        {title}
                     </Box>
-                ) : (
-                    <Button
-                        variant="transparent"
-                        onClick={toggleDrawer}
-                        data-testid="default-toggle-close-drawerContent"
-                    >
-                        <CloseIcon />
-                    </Button>
-                )}
+                    {toggleClose ? (
+                        <Box
+                            onClick={toggleDrawer}
+                            data-testid="custom-toggle-close-drawerContent"
+                            px={16}
+                            py={8}
+                        >
+                            {toggleClose}
+                        </Box>
+                    ) : (
+                        <Button
+                            variant="transparent"
+                            onClick={toggleDrawer}
+                            data-testid="default-toggle-close-drawerContent"
+                            px={16}
+                            py={8}
+                        >
+                            <CloseIcon />
+                        </Button>
+                    )}
+                </Box>
+                <Box p={16}>{children}</Box>
             </Box>
-            {children}
         </ModDrawerContent>
     )
 }

@@ -65,11 +65,11 @@ const CoreNavigation = () => {
 
     return (
         <>
-            <Link variant="icon" mb={8}>
-                Github Repository
-                <GithubIcon />
+            <Link variant="icon" mb={16}>
+                Github Repository <GithubIcon />
             </Link>
             {/* Getting Started */}
+
             <Accordion
                 variant="transparent"
                 notched={false}
@@ -155,17 +155,6 @@ const CoreNavigation = () => {
                                 )}
                             >
                                 Appbar
-                            </Link>
-                        </List>
-                        <List>
-                            <Link
-                                variant="transparent"
-                                href="/core/api/react-appbar-mobile"
-                                active={/core\/api\/react-appbar-mobile$/.test(
-                                    currentPage,
-                                )}
-                            >
-                                AppbarMobile
                             </Link>
                         </List>
                         <List>

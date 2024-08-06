@@ -59,7 +59,7 @@ export default function Page() {
     return (
         <ThemeWrapper>
             <Layout>
-                <Navbar />
+                <Navbar currentPage="root/core/children" />
                 <Box display="flex">
                     {/* Core Navigation */}
                     <LgScreenCoreNav>

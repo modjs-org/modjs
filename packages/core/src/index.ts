@@ -2,7 +2,6 @@ import Accordion from './components/Accordion/Accordion'
 import AccordionContent from './components/AccordionContent/AccordionContent'
 import AccordionTitle from './components/AccordionTitle/AccordionTitle'
 import Appbar from './components/Appbar/Appbar'
-import AppbarMobile from './components/AppbarMobile/AppbarMobile'
 import Article from './components/Article/Article'
 import Aside from './components/Aside/Aside'
 import Avatar from './components/Avatar/Avatar'
@@ -88,7 +87,6 @@ export {
     AccordionContent,
     AccordionTitle,
     Appbar,
-    AppbarMobile,
     Article,
     Aside,
     Avatar,

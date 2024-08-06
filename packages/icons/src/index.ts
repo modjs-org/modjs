@@ -68,6 +68,7 @@ import SwiftIcon from './components/SwiftIcon/SwiftIcon'
 import TerminalIcon from './components/TerminalIcon/TerminalIcon'
 import TerraformIcon from './components/TerraformIcon/TerraformIcon'
 import TypeScriptIcon from './components/TypescriptIcon/TypeScriptIcon'
+import UpChevronIcon from './components/UpChevronIcon/UpChevronIcon'
 import VisibleIcon from './components/VisibleIcon/VisibleIcon'
 import VitestIcon from './components/VitestIcon/VitestIcon'
 import WebpackIcon from './components/WebpackIcon/WebpackIcon'
@@ -146,6 +147,7 @@ export {
     TerminalIcon,
     TerraformIcon,
     TypeScriptIcon,
+    UpChevronIcon,
     VisibleIcon,
     VitestIcon,
     WebpackIcon,

@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "cypress/e2e/spec.cy.js"  ],
+, "cypress/e2e/spec.cy.js", "app/(common)/Navbar.jsx"  ],
   "exclude": [
     "node_modules"
   ]

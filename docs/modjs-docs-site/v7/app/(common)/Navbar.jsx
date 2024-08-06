@@ -1,6 +1,5 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
-import { styled } from 'styled-components'
+import React, { useContext } from 'react'
 import ThemeContext from '../context/ThemeContext'
 
 import {
@@ -15,38 +14,28 @@ import {
     SideNavigation,
     Tooltip,
     TooltipContent,
-    AppbarMobile,
 } from '@modjs/core'
 import {
     DarkThemeIcon,
     LightThemeIcon,
-    MailIcon,
-    GithubIcon,
-    MenuIcon,
     SettingsIcon,
+    MenuIcon,
+    GithubIcon,
+    CloseIcon,
 } from '@modjs/icons'
 
 import GlobalSearch from '../(shared)/GlobalSearch'
-import PackagesDropdown from '../(shared)/PackagesDropdown'
-import Navigation from '../(shared)/CoreNavigation'
+import CoreNavigation from '../(shared)/CoreNavigation'
+import IconsNavigation from '../(shared)/IconsNavigation'
 
 import lightTheme from '../../public/assets/themes/lightTheme'
 import darkTheme from '../../public/assets/themes/darkTheme'
+import ModjsPackages from '../(shared)/ModjsPackages'
 
-const MdScreenCoreNavigation = styled(Drawer)`
-    @media (min-width: 1281px) {
-        display: none;
-    }
-`
-
-const Navbar = () => {
-    const [currentPage, setCurrentPage] = useState('')
-
-    useEffect(() => {
-        const pg = window.location.pathname
-        setCurrentPage(pg)
-    }, [currentPage])
-
+const Navbar = ({
+    //TODO: Use trypscript for types
+    currentPage, //string
+}) => {
     const { setTheme } = useContext(ThemeContext)
 
     const switchToLightTheme = () => {
@@ -64,41 +53,119 @@ const Navbar = () => {
             <Appbar
                 sticky={true}
                 borderBottom={
-                    /icons$/.test(currentPage)
+                    currentPage === 'root' ||
+                    currentPage === 'root/core' ||
+                    currentPage === 'root/icons'
                         ? 'none'
-                        : /core$/.test(currentPage)
-                          ? 'none'
-                          : /\/$/.test(currentPage)
-                            ? 'none'
-                            : ''
+                        : ''
                 }
             >
                 <Container
                     fluid={
-                        /icons$/.test(currentPage)
+                        currentPage === 'root' ||
+                        currentPage === 'root/core' ||
+                        currentPage === 'root/icons'
                             ? false
-                            : /core$/.test(currentPage)
-                              ? false
-                              : /\/$/.test(currentPage)
-                                ? false
-                                : true
+                            : true
                     }
                     display="flex"
                     justifyContent="space-between"
                 >
-                    <Box display="flex" gap={8}>
-                        {/* Side Core Naviagtion for mdScreen */}
-                        <MdScreenCoreNavigation>
-                            <DrawerContent title={<PackagesDropdown />}>
-                                <SideNavigation top={0}>
-                                    <Navigation />
-                                </SideNavigation>
-                            </DrawerContent>
-                        </MdScreenCoreNavigation>
+                    <Drawer
+                        toggleOpen={
+                            <Tooltip
+                                arrow={true}
+                                el={
+                                    <Link variant="icon">
+                                        {currentPage === 'root/core' ||
+                                        currentPage === 'root/core/children'
+                                            ? '@modjs/core v7.0.0'
+                                            : currentPage === 'root/icons' ||
+                                                currentPage ===
+                                                    'root/icons/children'
+                                              ? '@modjs/icons v7.0.0'
+                                              : '@modjs v7.0.0'}
+                                        <MenuIcon />
+                                    </Link>
+                                }
+                            >
+                                <TooltipContent displayPosition="left">
+                                    <Typography variant="small" color="white">
+                                        Toggle Packages Drawer
+                                    </Typography>
+                                </TooltipContent>
+                            </Tooltip>
+                        }
+                        toggleClose={
+                            <Tooltip
+                                arrow={true}
+                                el={
+                                    <Link variant="icon">
+                                        {currentPage === 'root/core' ||
+                                        currentPage === 'root/core/children'
+                                            ? '@modjs/core v7.0.0'
+                                            : currentPage === 'root/icons' ||
+                                                currentPage ===
+                                                    'root/icons/children'
+                                              ? '@modjs/icons v7.0.0'
+                                              : '@modjs v7.0.0'}
 
-                        {/* Packages Dropdown */}
-                        <PackagesDropdown />
-                    </Box>
+                                        <CloseIcon />
+                                    </Link>
+                                }
+                            >
+                                <TooltipContent displayPosition="left">
+                                    <Typography variant="small" color="white">
+                                        Toggle Packages Drawer
+                                    </Typography>
+                                </TooltipContent>
+                            </Tooltip>
+                        }
+                    >
+                        <DrawerContent
+                            title={
+                                <ModjsPackages
+                                    dropdownToggleOpenText={
+                                        currentPage === 'root/core' ||
+                                        currentPage === 'root/core/children'
+                                            ? '@modjs/core v7.0.0'
+                                            : currentPage === 'root/icons' ||
+                                                currentPage ===
+                                                    'root/icons/children'
+                                              ? '@modjs/icons v7.0.0'
+                                              : '@modjs v7.0.0'
+                                    }
+                                    dropdownToggleCloseText={
+                                        currentPage === 'root/core' ||
+                                        currentPage === 'root/core/children'
+                                            ? '@modjs/core v7.0.0'
+                                            : currentPage === 'root/icons' ||
+                                                currentPage ===
+                                                    'root/icons/children'
+                                              ? '@modjs/icons v7.0.0'
+                                              : '@modjs v7.0.0'
+                                    }
+                                />
+                            }
+                        >
+                            <SideNavigation>
+                                {currentPage === 'root/core' ||
+                                currentPage === 'root/core/children' ? (
+                                    <CoreNavigation />
+                                ) : currentPage === 'root/icons' ||
+                                  currentPage === 'root/icons/children' ? (
+                                    <IconsNavigation />
+                                ) : (
+                                    <>
+                                        <Link variant="icon">
+                                            Github Repository <GithubIcon />
+                                        </Link>
+                                    </>
+                                )}
+                            </SideNavigation>
+                        </DrawerContent>
+                    </Drawer>
+
                     <Box>
                         {/* Menu Items */}
                         <Box display="flex" alignItems="center" gap={8}>
@@ -108,21 +175,6 @@ const Navbar = () => {
                                 toggleCloseId="desktop-search-field-toggle-close"
                                 searchFieldId="desktop-search"
                             />
-
-                            <Tooltip
-                                arrow={true}
-                                el={
-                                    <Link variant="icon">
-                                        <GithubIcon />
-                                    </Link>
-                                }
-                            >
-                                <TooltipContent displayPosition="left">
-                                    <Typography variant="small" color="white">
-                                        Github Repository
-                                    </Typography>
-                                </TooltipContent>
-                            </Tooltip>
 
                             {/* Settings Drawer */}
                             <Drawer
@@ -140,7 +192,7 @@ const Navbar = () => {
                                                 variant="small"
                                                 color="white"
                                             >
-                                                Settings
+                                                Toggle Settings Drawer
                                             </Typography>
                                         </TooltipContent>
                                     </Tooltip>
@@ -171,96 +223,10 @@ const Navbar = () => {
                                     </Box>
                                 </DrawerContent>
                             </Drawer>
-
-                            <Box elevation="light">
-                                <Link
-                                    variant="filled"
-                                    notched={true}
-                                    href="https://www.fullstackpro.io/contact"
-                                >
-                                    <MailIcon fill="white" /> Contact Us
-                                </Link>
-                            </Box>
                         </Box>
                     </Box>
                 </Container>
             </Appbar>
-
-            {/* Appbar Mobile */}
-            <AppbarMobile sticky={true}>
-                <Container
-                    display="flex"
-                    justifyContent="space-between"
-                    gap={8}
-                >
-                    <Box display="flex" gap={8}>
-                        {/* Side Core Naviagtion */}
-                        <Drawer>
-                            <DrawerContent title={<PackagesDropdown />}>
-                                <SideNavigation top={0}>
-                                    <Navigation />
-                                </SideNavigation>
-                            </DrawerContent>
-                        </Drawer>
-                    </Box>
-                    <Box>
-                        <Box display="flex" alignItems="center" gap={8}>
-                            {/* Menu Items */}
-                            <GlobalSearch
-                                toggleOpenId="mobile-search-field-toggle-open"
-                                toggleCloseId="mobile-search-field-toggle-close"
-                                searchFieldId="mobile-search"
-                            />
-                            <Drawer
-                                toggleOpen={
-                                    <Tooltip
-                                        arrow={true}
-                                        el={
-                                            <Link variant="icon">
-                                                <MenuIcon />
-                                            </Link>
-                                        }
-                                    >
-                                        <TooltipContent displayPosition="left">
-                                            <Typography
-                                                variant="small"
-                                                color="white"
-                                            >
-                                                Open Menu
-                                            </Typography>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                }
-                            >
-                                <DrawerContent
-                                    displayPosition="top"
-                                    title={
-                                        <Typography variant="h3">
-                                            Settings
-                                        </Typography>
-                                    }
-                                >
-                                    <Box display="flex" gap={8}>
-                                        <Button
-                                            variant="icon"
-                                            onClick={switchToLightTheme}
-                                        >
-                                            Light Theme <LightThemeIcon />
-                                        </Button>
-                                        <Button
-                                            variant="icon"
-                                            onClick={switchToDarkTheme}
-                                        >
-                                            Dark Theme
-                                            <DarkThemeIcon />
-                                        </Button>
-                                    </Box>
-                                </DrawerContent>
-                            </Drawer>
-                        </Box>
-                    </Box>
-                </Container>
-            </AppbarMobile>
         </>
     )
 }

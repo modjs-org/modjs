@@ -105,7 +105,7 @@ const ModLightTheme = {
         low: 0.5,
     },
     scrollbarColor: '#c2c2c2 #f2f2f2',
-    tooltipBg: '#474747',
+    tooltipBg: '#8e8e8e',
 }
 
 export default ModLightTheme

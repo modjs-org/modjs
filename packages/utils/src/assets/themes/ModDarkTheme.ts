@@ -105,7 +105,7 @@ const ModDarkTheme = {
         low: 0.5,
     },
     scrollbarColor: '#474747 #1f1d1d',
-    tooltipBg: '#8e8e8e',
+    tooltipBg: '#383636',
 }
 
 export default ModDarkTheme
