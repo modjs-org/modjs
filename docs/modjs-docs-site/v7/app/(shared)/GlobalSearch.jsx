@@ -183,6 +183,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                     notched={true}
                     id={searchFieldId}
                     onChange={handleSearch}
+                    placeholder="Search documentation..."
                 >
                     {searchTerm && (
                         <SearchResults

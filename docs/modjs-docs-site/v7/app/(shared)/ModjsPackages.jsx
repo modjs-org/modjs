@@ -17,7 +17,12 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
     return (
         <Dropdown
             toggleOpen={
-                <Button variant="icon" notched={true} textTransform="none">
+                <Button
+                    variant="icon"
+                    notched={true}
+                    textTransform="none"
+                    data-testid="ModPackages-dropdown-toggle"
+                >
                     {dropdownToggleOpenText}
                     <DownChevronIcon />
                 </Button>
@@ -42,6 +47,7 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
                                     href="/"
                                     pl={0}
                                     fs={1}
+                                    data-testid="ModPackages-link-root"
                                 >
                                     @modjs v7.0.0
                                 </Link>

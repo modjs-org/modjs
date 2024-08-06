@@ -76,7 +76,10 @@ const Navbar = ({
                             <Tooltip
                                 arrow={true}
                                 el={
-                                    <Link variant="icon">
+                                    <Link
+                                        variant="icon"
+                                        data-testid="Navbar-toggle-packages-drawer"
+                                    >
                                         {currentPage === 'root/core' ||
                                         currentPage === 'root/core/children'
                                             ? '@modjs/core v7.0.0'

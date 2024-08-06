@@ -2,8 +2,10 @@
 import React from 'react'
 import { Box, Container, Footer, Grid, Link, Typography } from '@modjs/core'
 import { FullStackProIcon, GithubIcon } from '@modjs/icons'
+import { useMediaQuery } from '@modjs/utils'
 
 const ModFooter = () => {
+    const smScreen = useMediaQuery({ query: { media: '(max-width: 768px)' } })
     return (
         <Footer borderTop="dark" position="relative">
             <Container py={16}>
@@ -12,6 +14,7 @@ const ModFooter = () => {
                         display="flex"
                         justifyContent="left"
                         alignItems="center"
+                        mb={7}
                     >
                         <Link
                             variant="inline"
@@ -25,8 +28,9 @@ const ModFooter = () => {
 
                     <Box
                         display="flex"
-                        justifyContent="center"
+                        justifyContent={smScreen ? 'left' : 'center'}
                         alignItems="center"
+                        mb={7}
                     >
                         <Typography variant="small">
                             © 2024 www.fullstackpro.io | 10+ years of Software
@@ -37,7 +41,8 @@ const ModFooter = () => {
                         display="flex"
                         alignItems="center"
                         gap={8}
-                        justifyContent="end"
+                        justifyContent={smScreen ? 'start' : 'center'}
+                        mb={7}
                     >
                         <Link variant="icon">
                             <FullStackProIcon
