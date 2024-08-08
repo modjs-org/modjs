@@ -44,6 +44,7 @@ import MinusIcon from './components/MinusIcon/MinusIcon'
 import MobileIcon from './components/MobileIcon/MobileIcon'
 import MobileSettingsIcon from './components/MobileSettingsIcon/MobileSettingsIcon'
 import MongoDbIcon from './components/MongoDbIcon/MongoDbIcon'
+import NewTabIcon from './components/NewTabIcon/NewTabIcon'
 import NextJsIcon from './components/NextJsIcon/NextJsIcon'
 import NodeIcon from './components/NodeIcon/NodeIcon'
 import NpmIcon from './components/NpmIcon/NpmIcon'
@@ -123,6 +124,7 @@ export {
     MobileIcon,
     MobileSettingsIcon,
     MongoDbIcon,
+    NewTabIcon,
     NextJsIcon,
     NodeIcon,
     NpmIcon,

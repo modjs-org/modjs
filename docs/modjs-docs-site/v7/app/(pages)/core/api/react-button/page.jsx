@@ -45,13 +45,9 @@ const MainContent = styled(Main)`
     width: 100%;
 `
 
-const LgScreenCoreNav = styled(SideNavigation)`
-    @media (max-width: 1280px) {
-        display: none;
-    }
-`
-
 export default function Page() {
+    const lgScreen = useMediaQuery({ query: { media: '(min-width: 1281px)' } })
+
     const mdScreen = useMediaQuery({ query: { media: '(max-width: 1280px)' } })
     const smScreen = useMediaQuery({ query: { media: '(max-width: 768px)' } })
 
@@ -69,11 +65,13 @@ export default function Page() {
                 <Navbar currentPage="root/core/children" />
                 <Box display="flex">
                     {/* Core Navigation */}
-                    <LgScreenCoreNav>
+
+                    <SideNavigation>
                         <Container fluid={true}>
-                            <CoreNavigation />
+                            {lgScreen && <CoreNavigation />}
                         </Container>
-                    </LgScreenCoreNav>
+                    </SideNavigation>
+
                     {/* Main Content */}
                     <MainContent
                         borderLeft={
@@ -88,6 +86,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/core"
                                         width="auto"
+                                        data-testid="breadcrumbs_core"
                                     >
                                         core
                                     </Link>
@@ -99,6 +98,7 @@ export default function Page() {
                                         href="/core/api/react-button"
                                         active={true}
                                         width="auto"
+                                        data-testid="breadcrumbs_react_button"
                                     >
                                         react-button
                                     </Link>
@@ -146,7 +146,12 @@ export default function Page() {
                                             <Tooltip
                                                 arrow={true}
                                                 el={
-                                                    <Link variant="icon">
+                                                    <Link
+                                                        variant="icon"
+                                                        href="https://github.com/modjs-org/modjs/tree/main/packages/core/src/components/Button"
+                                                        target="_blank"
+                                                        data-testid="import_github"
+                                                    >
                                                         <GithubIcon />
                                                     </Link>
                                                 }
@@ -295,6 +300,7 @@ export default function Page() {
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="prev_breadcrumbs_api"
                                 >
                                     <LeftArrowIcon />
                                     Breadcrumbs API
@@ -304,6 +310,7 @@ export default function Page() {
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="next_card_api"
                                 >
                                     Card API
                                     <RightArrowIcon />

@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#message-area-api"
                         active={/#message-area-api$/.test(fragmentId)}
+                        data-testid="message_area_api"
                     >
                         MessageArea API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#message-area-props"
                         active={/#message-area-props$/.test(fragmentId)}
+                        data-tesid="message_area_props"
                     >
                         MessageArea Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

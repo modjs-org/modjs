@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#confirm-password-field-api"
                         active={/#confirm-password-field-api$/.test(fragmentId)}
+                        data-testid="confirm_password_field_api"
                     >
                         ConfirmPasswordField API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -46,6 +48,7 @@ const TableOfContents = () => {
                         active={/#confirm-password-field-props$/.test(
                             fragmentId,
                         )}
+                        data-testid="confirm_password_field_props"
                     >
                         ConfirmPasswordField Props
                     </Link>
@@ -57,6 +60,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

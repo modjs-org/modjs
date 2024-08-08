@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#carousel-description-api"
                         active={/#carousel-description-api$/.test(fragmentId)}
+                        data-testid="carousel_description_api"
                     >
                         CarouselDescription API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#carousel-description-props"
                         active={/#carousel-description-props$/.test(fragmentId)}
+                        data-testid="carousel_description_props"
                     >
                         CarouselDescription Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

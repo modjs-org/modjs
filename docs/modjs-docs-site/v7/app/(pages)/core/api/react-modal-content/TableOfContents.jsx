@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#modal-content-api"
                         active={/#modal-content-api$/.test(fragmentId)}
+                        data-testid="modal_content_api"
                     >
                         ModalContent API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#modal-content-props"
                         active={/#modal-content-props$/.test(fragmentId)}
+                        data-testid="modal_content_props"
                     >
                         ModalContent Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

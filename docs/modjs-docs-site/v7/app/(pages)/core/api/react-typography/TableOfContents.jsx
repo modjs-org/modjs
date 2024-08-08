@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#typography-api"
                         active={/#typography-api$/.test(fragmentId)}
+                        data-testid="typography_api"
                     >
                         Typography API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#typography-props"
                         active={/#typography-props$/.test(fragmentId)}
+                        data-testid="typography_props"
                     >
                         Typography Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

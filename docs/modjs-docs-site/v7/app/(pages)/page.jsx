@@ -14,7 +14,12 @@ import {
     Link,
     Typography,
 } from '@modjs/core'
-import { RightChevronIcon, ReactIcon, TerminalIcon } from '@modjs/icons'
+import {
+    RightChevronIcon,
+    ReactIcon,
+    TerminalIcon,
+    NewTabIcon,
+} from '@modjs/icons'
 import ThemeWrapper from '../wrappers/ThemeWrapper'
 import ModFooter from '../(common)/Footer'
 import Navbar from '../(common)/Navbar'
@@ -105,6 +110,7 @@ export default function Page() {
                                             variant="filled"
                                             notched={true}
                                             href="/core/installation"
+                                            data-testid="getting_started"
                                         >
                                             Getting Started
                                             <RightChevronIcon fill="#ffffff" />
@@ -113,6 +119,7 @@ export default function Page() {
                                             variant="outlined"
                                             notched={true}
                                             href="/core/api/react-accordion"
+                                            data-testid="view_core_components_api"
                                         >
                                             View Core Components API
                                             <RightChevronIcon />
@@ -147,6 +154,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/core"
                                         ml={-8}
+                                        data-testid="core_learn_more"
                                     >
                                         Learn More
                                         <RightChevronIcon />
@@ -168,6 +176,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/icons"
                                         ml={-8}
+                                        data-testid="icons_learn_more"
                                     >
                                         Learn More
                                         <RightChevronIcon />
@@ -185,9 +194,15 @@ export default function Page() {
                                         consistent design and efficient styling
                                         across your application.
                                     </Typography>
-                                    <Link variant="transparent" href="" ml={-8}>
+                                    <Link
+                                        variant="transparent"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/utils"
+                                        target="_blank"
+                                        ml={-8}
+                                        data-testid="utils_github_repository"
+                                    >
                                         Github Repository
-                                        <RightChevronIcon />
+                                        <NewTabIcon />
                                     </Link>
                                 </Box>
                                 <Box>
@@ -203,11 +218,13 @@ export default function Page() {
                                     </Typography>
                                     <Link
                                         variant="transparent"
-                                        href="/github"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/helpers"
+                                        target="_blank"
                                         ml={-8}
+                                        data-testid="helpers_github_repository"
                                     >
                                         Github Repository
-                                        <RightChevronIcon />
+                                        <NewTabIcon />
                                     </Link>
                                 </Box>
                             </Grid>

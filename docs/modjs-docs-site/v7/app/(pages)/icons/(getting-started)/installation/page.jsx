@@ -22,6 +22,7 @@ import {
     RightArrowIcon,
     LeftArrowIcon,
     TerminalIcon,
+    NewTabIcon,
 } from '@modjs/icons'
 
 import Navbar from '../../../../(common)/Navbar'
@@ -35,13 +36,8 @@ const MainContent = styled(Main)`
     width: 100%;
 `
 
-const LgScreenCoreNav = styled(SideNavigation)`
-    @media (max-width: 1280px) {
-        display: none;
-    }
-`
-
 export default function Page() {
+    const lgScreen = useMediaQuery({ query: { media: '(min-width: 1281px)' } })
     const mdScreen = useMediaQuery({ query: { media: '(max-width: 1280px)' } })
     const smScreen = useMediaQuery({ query: { media: '(max-width: 768px)' } })
 
@@ -58,11 +54,13 @@ export default function Page() {
                 <Navbar currentPage="root/icons/children" />
                 <Box display="flex">
                     {/* Core Navigation */}
-                    <LgScreenCoreNav>
+
+                    <SideNavigation>
                         <Container fluid={true}>
-                            <IconsNavigation />
+                            {lgScreen && <IconsNavigation />}
                         </Container>
-                    </LgScreenCoreNav>
+                    </SideNavigation>
+
                     {/* Main Content */}
                     <MainContent
                         borderLeft={
@@ -77,6 +75,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/icons"
                                         width="auto"
+                                        data-testid="breadcrumbs_icons"
                                     >
                                         icons
                                     </Link>
@@ -86,6 +85,7 @@ export default function Page() {
                                         href="/icons/installation"
                                         active={true}
                                         width="auto"
+                                        data-testid="breadcrumbs_installation"
                                     >
                                         installation
                                     </Link>
@@ -125,10 +125,11 @@ export default function Page() {
                                             <Link
                                                 variant="inline"
                                                 href="https://nodejs.org/en"
-                                                target="blank"
+                                                target="_blank"
+                                                data-testid="prerequisites_here"
                                             >
-                                                here.
-                                            </Link>{' '}
+                                                here. <NewTabIcon />
+                                            </Link>
                                             Verify that you have Node.js
                                             installed by running:
                                         </Typography>
@@ -188,7 +189,7 @@ export default function Page() {
                                     <List listStyle="square">
                                         <Typography variant="body1">
                                             <Typography variant="strong">
-                                                React:{' '}
+                                                React:{` `}
                                             </Typography>
                                             The icons library is designed to
                                             work with
@@ -196,8 +197,9 @@ export default function Page() {
                                                 variant="inline"
                                                 href="https://react.dev/"
                                                 target="blank"
+                                                data-testid="prerequisites_react"
                                             >
-                                                React.
+                                                React. <NewTabIcon />
                                             </Link>
                                             Ensure you have a React project set
                                             up. You can create a new React
@@ -334,6 +336,7 @@ cd my-app`}
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="prev_icons"
                                 >
                                     <LeftArrowIcon />
                                     Icons
@@ -343,6 +346,7 @@ cd my-app`}
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="next_customization"
                                 >
                                     Customization
                                     <RightArrowIcon />

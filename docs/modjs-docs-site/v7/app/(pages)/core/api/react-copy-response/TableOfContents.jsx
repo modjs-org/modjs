@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#copy-response-api"
                         active={/#copy-response-api$/.test(fragmentId)}
+                        data-testid="copy_response_api"
                     >
                         CopyResponse API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#copy-response-props"
                         active={/#copy-response-props$/.test(fragmentId)}
+                        data-testid="copy_response_props"
                     >
                         CopyResponse Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

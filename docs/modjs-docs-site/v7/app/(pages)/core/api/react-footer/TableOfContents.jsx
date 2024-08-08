@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#footer-api"
                         active={/#footer-api$/.test(fragmentId)}
+                        data-testid="footer_api"
                     >
                         Footer API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#footer-props"
                         active={/#footer-props$/.test(fragmentId)}
+                        data-testid="footer_props"
                     >
                         Footer Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

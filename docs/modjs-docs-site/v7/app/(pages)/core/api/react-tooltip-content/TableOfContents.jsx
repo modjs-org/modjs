@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#tooltip-content-api"
                         active={/#tooltip-content-api$/.test(fragmentId)}
+                        data-testid="tooltip_content_api"
                     >
                         TooltipContent API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#tooltip-content-props"
                         active={/#tooltip-content-props$/.test(fragmentId)}
+                        data-testid="tooltip_content_props"
                     >
                         TooltipContent Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

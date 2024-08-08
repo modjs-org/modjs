@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#create-password-field-api"
                         active={/#create-password-field-api$/.test(fragmentId)}
+                        data-testid="create_password_field_api"
                     >
                         CreatePasswordField API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -46,6 +48,7 @@ const TableOfContents = () => {
                         active={/#create-password-field-props$/.test(
                             fragmentId,
                         )}
+                        data-testid="create_password_field_props"
                     >
                         CreatePasswordField Props
                     </Link>
@@ -57,6 +60,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

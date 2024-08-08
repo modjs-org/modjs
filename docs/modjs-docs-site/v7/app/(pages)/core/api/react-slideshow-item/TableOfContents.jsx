@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#slideshow-item-api"
                         active={/#slideshow-item-api$/.test(fragmentId)}
+                        data-testid="slideshow_item_api"
                     >
                         SlideshowItem API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#slideshow-item-props"
                         active={/#slideshow-item-props$/.test(fragmentId)}
+                        data-testid="slideshow_item_props"
                     >
                         SlideshowItem Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

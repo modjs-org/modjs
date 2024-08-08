@@ -14,7 +14,12 @@ import {
     Link,
     Typography,
 } from '@modjs/core'
-import { RightChevronIcon, ReactIcon, TerminalIcon } from '@modjs/icons'
+import {
+    NewTabIcon,
+    RightChevronIcon,
+    ReactIcon,
+    TerminalIcon,
+} from '@modjs/icons'
 import ThemeWrapper from '../../wrappers/ThemeWrapper'
 import ModFooter from '../../(common)/Footer'
 import Navbar from '../../(common)/Navbar'
@@ -111,6 +116,7 @@ export default function Page() {
                                             variant="filled"
                                             notched={true}
                                             href="/icons/installation"
+                                            data-testid="getting_started"
                                         >
                                             Getting Started
                                             <RightChevronIcon fill="#ffffff" />
@@ -119,6 +125,7 @@ export default function Page() {
                                             variant="outlined"
                                             notched={true}
                                             href="/icons/api"
+                                            data-testid="view_components_api"
                                         >
                                             View Components API
                                             <RightChevronIcon />
@@ -151,6 +158,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/icons/installation"
                                         ml={-8}
+                                        data-testid="installation_learn_more"
                                     >
                                         Learn More
                                         <RightChevronIcon />
@@ -167,6 +175,7 @@ export default function Page() {
                                     <Link
                                         variant="transparent"
                                         href="/icons/customization"
+                                        data-testid="customization_learn_more"
                                         ml={-8}
                                     >
                                         Learn More
@@ -186,6 +195,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/icons/api/"
                                         ml={-8}
+                                        data-testid="api_learn_more"
                                     >
                                         Learn More
                                         <RightChevronIcon />
@@ -204,11 +214,13 @@ export default function Page() {
                                     </Typography>
                                     <Link
                                         variant="transparent"
-                                        href="/github"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/icons"
+                                        target="_blank"
                                         ml={-8}
+                                        data-testid="github_repository"
                                     >
                                         View Repository
-                                        <RightChevronIcon />
+                                        <NewTabIcon />
                                     </Link>
                                 </Box>
                             </Grid>

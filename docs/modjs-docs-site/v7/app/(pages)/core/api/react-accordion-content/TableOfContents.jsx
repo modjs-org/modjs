@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#accordion-content-api"
                         active={/#accordion-content-api$/.test(fragmentId)}
+                        data-testid="accordion_content_api"
                     >
                         AccordionContent API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#accordion-content-props"
                         active={/#accordion-content-props$/.test(fragmentId)}
+                        data-testid="accordion_content_props"
                     >
                         AccordionContent Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

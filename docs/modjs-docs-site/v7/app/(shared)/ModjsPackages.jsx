@@ -1,4 +1,3 @@
-// TODO: Remove file
 import React from 'react'
 import {
     Box,
@@ -21,7 +20,7 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
                     variant="icon"
                     notched={true}
                     textTransform="none"
-                    data-testid="ModPackages-dropdown-toggle"
+                    data-testid="ModjsPackages_btn-toggle_packages_dropdown"
                 >
                     {dropdownToggleOpenText}
                     <DownChevronIcon />
@@ -47,7 +46,7 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
                                     href="/"
                                     pl={0}
                                     fs={1}
-                                    data-testid="ModPackages-link-root"
+                                    data-testid="ModjsPackages_link-home"
                                 >
                                     @modjs v7.0.0
                                 </Link>
@@ -65,6 +64,7 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
                                     href="/core"
                                     pl={0}
                                     fs={1}
+                                    data-testid="ModjsPackages_link-core"
                                 >
                                     @modjs/core v7.0.0
                                 </Link>
@@ -83,6 +83,7 @@ const ModjsPackages = ({ dropdownToggleOpenText, dropdownToggleCloseText }) => {
                                     href="/icons"
                                     pl={0}
                                     fs={1}
+                                    data-testid="ModjsPackages_link-icons"
                                 >
                                     @modjs/icons v7.0.0
                                 </Link>

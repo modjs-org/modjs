@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#phone-field-api"
                         active={/#phone-field-api$/.test(fragmentId)}
+                        data-testid="phone_field_api"
                     >
                         PhoneField API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#phone-field-props"
                         active={/#phone-field-props$/.test(fragmentId)}
+                        data-testit="phone_field_props"
                     >
                         PhoneField Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

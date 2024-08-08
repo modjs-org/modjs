@@ -21,6 +21,7 @@ import {
     ForwardSlashIcon,
     RightArrowIcon,
     LeftArrowIcon,
+    NewTabIcon,
     TerminalIcon,
 } from '@modjs/icons'
 
@@ -35,13 +36,8 @@ const MainContent = styled(Main)`
     width: 100%;
 `
 
-const LgScreenCoreNav = styled(SideNavigation)`
-    @media (max-width: 1280px) {
-        display: none;
-    }
-`
-
 export default function Page() {
+    const lgScreen = useMediaQuery({ query: { media: '(min-width: 1281px)' } })
     const mdScreen = useMediaQuery({ query: { media: '(max-width: 1280px)' } })
     const smScreen = useMediaQuery({ query: { media: '(max-width: 768px)' } })
 
@@ -59,11 +55,13 @@ export default function Page() {
                 <Navbar currentPage="root/core/children" />
                 <Box display="flex">
                     {/* Core Navigation */}
-                    <LgScreenCoreNav>
+
+                    <SideNavigation>
                         <Container fluid={true}>
-                            <CoreNavigation />
+                            {lgScreen && <CoreNavigation />}
                         </Container>
-                    </LgScreenCoreNav>
+                    </SideNavigation>
+
                     {/* Main Content */}
                     <MainContent
                         borderLeft={
@@ -78,6 +76,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/core"
                                         width="auto"
+                                        data-testid="breadcrumbs_core"
                                     >
                                         core
                                     </Link>
@@ -87,6 +86,7 @@ export default function Page() {
                                         href="/core/installation"
                                         active={true}
                                         width="auto"
+                                        data-testid="breadcrumbs_installation"
                                     >
                                         installation
                                     </Link>
@@ -119,17 +119,18 @@ export default function Page() {
                                     <List listStyle="square">
                                         <Typography variant="body1">
                                             <Typography variant="strong">
-                                                Node.js:{' '}
+                                                Node.js: {` `}
                                             </Typography>
                                             Make sure you have Node.js
                                             installed. You can download it from
                                             <Link
                                                 variant="inline"
                                                 href="https://nodejs.org/en"
-                                                target="blank"
+                                                target="_blank"
+                                                data-testid="prerequisites_here"
                                             >
-                                                here.
-                                            </Link>{' '}
+                                                here. <NewTabIcon />
+                                            </Link>
                                             Verify that you have Node.js
                                             installed by running:
                                         </Typography>
@@ -196,9 +197,10 @@ export default function Page() {
                                             <Link
                                                 variant="inline"
                                                 href="https://react.dev/"
-                                                target="blank"
+                                                target="_blank"
+                                                data-testid="prerequisites_react"
                                             >
-                                                React.
+                                                React. <NewTabIcon />
                                             </Link>
                                             Ensure you have a React project set
                                             up. You can create a new React
@@ -298,12 +300,22 @@ cd my-app`}
                                 </Typography>
                                 <Typography variant="body1">
                                     The core library itself is dependent on
-                                    <Link variant="inline" href="/utils">
-                                        utils
+                                    <Link
+                                        variant="inline"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/utils"
+                                        target="_blank"
+                                        data-testid="dependencies_utils"
+                                    >
+                                        utils <NewTabIcon />
                                     </Link>
                                     and
-                                    <Link variant="inline" href="/helpers">
-                                        helpers
+                                    <Link
+                                        variant="inline"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/helpers"
+                                        target="_blank"
+                                        data-testid="dependencies_helpers"
+                                    >
+                                        helpers <NewTabIcon />
                                     </Link>
                                     package from Mod.js. To install these
                                     dependencies, run the following command:
@@ -372,6 +384,7 @@ cd my-app`}
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="prev_core"
                                 >
                                     <LeftArrowIcon />
                                     Core
@@ -381,6 +394,7 @@ cd my-app`}
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="next_customization"
                                 >
                                     Customization
                                     <RightArrowIcon />

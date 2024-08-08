@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#card-content-api"
                         active={/#card-content-api$/.test(fragmentId)}
+                        data-testid="card_card_api"
                     >
                         CardContent API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#card-content-props"
                         active={/#card-content-props$/.test(fragmentId)}
+                        data-testid="card_content_props"
                     >
                         CardContent Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

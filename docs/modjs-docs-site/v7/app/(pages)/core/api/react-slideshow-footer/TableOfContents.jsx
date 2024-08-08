@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#slideshow-footer-api"
                         active={/#slideshow-footer-api$/.test(fragmentId)}
+                        data-testid="slideshow_footer_api"
                     >
                         SlideshowFooter API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#slideshow-footer-props"
                         active={/#slideshow-footer-props$/.test(fragmentId)}
+                        data-testid="slideshow_footer_props"
                     >
                         SlideshowFooter Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

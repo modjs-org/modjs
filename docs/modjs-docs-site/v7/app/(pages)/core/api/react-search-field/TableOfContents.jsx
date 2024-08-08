@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#search-field-api"
                         active={/#search-field-api$/.test(fragmentId)}
+                        data-testid="search_field_api"
                     >
                         SearchField API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#search-field-props"
                         active={/#search-field-props$/.test(fragmentId)}
+                        data-testid="searchfield_props"
                     >
                         SearchField Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

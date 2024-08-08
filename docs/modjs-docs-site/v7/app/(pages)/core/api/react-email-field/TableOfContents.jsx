@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#email-field-api"
                         active={/#email-field-api$/.test(fragmentId)}
+                        data-testid="email_field_api"
                     >
                         EmailField API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#email-field-props"
                         active={/#email-field-props$/.test(fragmentId)}
+                        data-testid="email_field_props"
                     >
                         EmailField Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

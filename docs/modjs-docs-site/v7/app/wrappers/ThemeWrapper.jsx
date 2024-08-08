@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { ModThemeProvider } from '@modjs/utils'
 
 import ThemeContext from '../context/ThemeContext'
-import darkTheme from '../../public/assets/themes/darkTheme'
+// import darkTheme from '../../public/assets/themes/darkTheme'
+import lightTheme from '../../public/assets/themes/lightTheme'
 
 const ThemeWrapper = ({ children }) => {
-    const [theme, setTheme] = useState(darkTheme)
+    const [theme, setTheme] = useState(lightTheme) //TODO: change theme based on time of day
 
     const value = {
         theme,
@@ -16,7 +17,7 @@ const ThemeWrapper = ({ children }) => {
         const currentTheme = JSON.parse(localStorage.getItem('theme'))
         setTheme(currentTheme)
         if (!currentTheme) {
-            setTheme(darkTheme)
+            setTheme(lightTheme) //TODO: change theme based on time of day
         }
     }, [])
     return (

@@ -24,6 +24,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#customization"
                         active={/#customization$/.test(fragmentId)}
+                        data-testid="customization"
                     >
                         Customization
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         href="#theming"
                         fw="bold"
                         active={/#theming$/.test(fragmentId)}
+                        data-testid="theming"
                     >
                         Theming
                     </Link>
@@ -43,6 +45,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#light-theme"
                         active={/#light-theme$/.test(fragmentId)}
+                        data-testid="light_theme"
                     >
                         Light Theme
                     </Link>
@@ -52,6 +55,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#dark-theme"
                         active={/#dark-theme$/.test(fragmentId)}
+                        data-testid="dark_theme"
                     >
                         Dark Theme
                     </Link>
@@ -62,6 +66,7 @@ const TableOfContents = () => {
                         href="#override-styles"
                         fw="bold"
                         active={/#override-styles$/.test(fragmentId)}
+                        data-testid="override_styles"
                     >
                         Override Styles
                     </Link>
@@ -71,6 +76,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>
@@ -80,6 +86,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#styled-components"
                         active={/#styled-components$/.test(fragmentId)}
+                        data-testid="styled_components"
                     >
                         Styled Components
                     </Link>
@@ -89,6 +96,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#custom-classnames"
                         active={/#custom-classnames$/.test(fragmentId)}
+                        data-testid="custom_classnames"
                     >
                         Custom classNames
                     </Link>
@@ -98,6 +106,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#inline-styles"
                         active={/#inline-styles$/.test(fragmentId)}
+                        data-testid="inline_styles"
                     >
                         Inline Styles
                     </Link>

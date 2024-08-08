@@ -21,6 +21,7 @@ import {
     JavascriptIcon,
     LeftArrowIcon,
     RightArrowIcon,
+    NewTabIcon,
 } from '@modjs/icons'
 
 import Navbar from '../../../../(common)/Navbar'
@@ -34,13 +35,8 @@ const MainContent = styled(Main)`
     width: 100%;
 `
 
-const LgScreenCoreNav = styled(SideNavigation)`
-    @media (max-width: 1280px) {
-        display: none;
-    }
-`
-
 export default function Page() {
+    const lgScreen = useMediaQuery({ query: { media: '(min-width: 1281px)' } })
     const mdScreen = useMediaQuery({ query: { media: '(max-width: 1280px)' } })
     const smScreen = useMediaQuery({ query: { media: '(max-width: 768px)' } })
 
@@ -62,11 +58,12 @@ export default function Page() {
                 <Navbar currentPage="root/core/children" />
                 <Box display="flex">
                     {/* Core Navigation */}
-                    <LgScreenCoreNav>
+
+                    <SideNavigation>
                         <Container fluid={true}>
-                            <CoreNavigation />
+                            {lgScreen && <CoreNavigation />}
                         </Container>
-                    </LgScreenCoreNav>
+                    </SideNavigation>
                     {/* Main Content */}
                     <MainContent
                         borderLeft={
@@ -81,6 +78,7 @@ export default function Page() {
                                         variant="transparent"
                                         href="/core"
                                         width="auto"
+                                        data-testid="breadcrumbs_core"
                                     >
                                         core
                                     </Link>
@@ -90,6 +88,7 @@ export default function Page() {
                                         href="/core/customization"
                                         active={true}
                                         width="auto"
+                                        data-testid="breadcrumbs_customization"
                                     >
                                         customization
                                     </Link>
@@ -115,7 +114,14 @@ export default function Page() {
                                 <Typography variant="body1">
                                     Customize the appearance and behavior of
                                     core components using a theming system from
-                                    @modjs/utils.
+                                    <Link
+                                        variant="inline"
+                                        target="_blank"
+                                        href="https://github.com/modjs-org/modjs/tree/main/packages/utils"
+                                        data-testid="theming_modjs_utils"
+                                    >
+                                        @modjs/utils. <NewTabIcon />
+                                    </Link>
                                 </Typography>
                                 <Section id="light-theme">
                                     <Typography variant="h3">
@@ -417,8 +423,13 @@ export default darkTheme`}
                                     <Typography variant="body1">
                                         Each component under @modjs/core is
                                         wrapped with a
-                                        <Link variant="inline" href="">
-                                            withModSystemProps
+                                        <Link
+                                            variant="inline"
+                                            target="_blank"
+                                            href="https://github.com/modjs-org/modjs/blob/main/packages/utils/src/components/withSystemProps/withSystemProps.tsx"
+                                            data-testid="system_props_withSystemProps"
+                                        >
+                                            withSystemProps <NewTabIcon />
                                         </Link>
                                         HOC. All props provided by
                                         withModSystemProps can be applied to the
@@ -472,8 +483,13 @@ export const App = () => {
                                     <Typography variant="body1">
                                         All core components from @modjs/core are
                                         styled using the
-                                        <Link variant="inline" href="">
-                                            styled-components
+                                        <Link
+                                            variant="inline"
+                                            target="_blank"
+                                            href="https://styled-components.com/"
+                                            data-testid="styled_components_styled_components"
+                                        >
+                                            styled-components <NewTabIcon />
                                         </Link>
                                         library. The default styles can be
                                         overridden using styled-components.
@@ -622,6 +638,7 @@ export const App = () => {
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="prev_installation"
                                 >
                                     <LeftArrowIcon />
                                     Installation
@@ -631,6 +648,7 @@ export const App = () => {
                                     variant="inline"
                                     display="flex"
                                     alignItems="center"
+                                    data-testid="next_accordion_api"
                                 >
                                     Accordion API
                                     <RightArrowIcon />

@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#snackbar-api"
                         active={/#snackbar-api$/.test(fragmentId)}
+                        data-testid="snackbar_api"
                     >
                         Snackbar API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#snackbar-props"
                         active={/#snackbar-props$/.test(fragmentId)}
+                        data-testid="snackbar_props"
                     >
                         Snackbar Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

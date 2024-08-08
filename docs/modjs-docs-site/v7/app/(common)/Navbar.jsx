@@ -8,7 +8,6 @@ import {
     Box,
     Drawer,
     DrawerContent,
-    Link,
     Container,
     Typography,
     SideNavigation,
@@ -20,11 +19,11 @@ import {
     LightThemeIcon,
     SettingsIcon,
     MenuIcon,
-    GithubIcon,
     CloseIcon,
 } from '@modjs/icons'
 
 import GlobalSearch from '../(shared)/GlobalSearch'
+import HomeNavigation from '../(shared)/HomeNavigation'
 import CoreNavigation from '../(shared)/CoreNavigation'
 import IconsNavigation from '../(shared)/IconsNavigation'
 
@@ -76,9 +75,9 @@ const Navbar = ({
                             <Tooltip
                                 arrow={true}
                                 el={
-                                    <Link
+                                    <Button
                                         variant="icon"
-                                        data-testid="Navbar-toggle-packages-drawer"
+                                        data-testid="Navbar_btn-toggle_packages_drawer"
                                     >
                                         {currentPage === 'root/core' ||
                                         currentPage === 'root/core/children'
@@ -89,7 +88,7 @@ const Navbar = ({
                                               ? '@modjs/icons v7.0.0'
                                               : '@modjs v7.0.0'}
                                         <MenuIcon />
-                                    </Link>
+                                    </Button>
                                 }
                             >
                                 <TooltipContent displayPosition="left">
@@ -103,7 +102,7 @@ const Navbar = ({
                             <Tooltip
                                 arrow={true}
                                 el={
-                                    <Link variant="icon">
+                                    <Button variant="icon">
                                         {currentPage === 'root/core' ||
                                         currentPage === 'root/core/children'
                                             ? '@modjs/core v7.0.0'
@@ -114,7 +113,7 @@ const Navbar = ({
                                               : '@modjs v7.0.0'}
 
                                         <CloseIcon />
-                                    </Link>
+                                    </Button>
                                 }
                             >
                                 <TooltipContent displayPosition="left">
@@ -159,11 +158,7 @@ const Navbar = ({
                                   currentPage === 'root/icons/children' ? (
                                     <IconsNavigation />
                                 ) : (
-                                    <>
-                                        <Link variant="icon">
-                                            Github Repository <GithubIcon />
-                                        </Link>
-                                    </>
+                                    <HomeNavigation />
                                 )}
                             </SideNavigation>
                         </DrawerContent>
@@ -185,9 +180,9 @@ const Navbar = ({
                                     <Tooltip
                                         arrow={true}
                                         el={
-                                            <Link variant="icon">
+                                            <Button variant="icon">
                                                 <SettingsIcon />
-                                            </Link>
+                                            </Button>
                                         }
                                     >
                                         <TooltipContent displayPosition="left">

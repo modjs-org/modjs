@@ -24,6 +24,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#installation"
                         active={/#installation$/.test(fragmentId)}
+                        data-testid="installation"
                     >
                         Installation
                     </Link>
@@ -33,6 +34,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#prerequisites"
                         active={/#prerequisites$/.test(fragmentId)}
+                        data-testid="prerequisites"
                     >
                         Prerequisites
                     </Link>
@@ -42,6 +44,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#peer-dependencies"
                         active={/#peer-dependencies$/.test(fragmentId)}
+                        data-testid="peer_dependencies"
                     >
                         Peer Dependencies
                     </Link>
@@ -52,6 +55,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#quick-install"
                         active={/#quick-install$/.test(fragmentId)}
+                        data-testid="quick_install"
                     >
                         Quick Install
                     </Link>

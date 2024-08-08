@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#linear-progress-api"
                         active={/#linear-progress-api$/.test(fragmentId)}
+                        data-testid="linear_progress_api"
                     >
                         LinearProgress API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#linear-progress-props"
                         active={/#linear-progress-props$/.test(fragmentId)}
+                        data-testid="linear_progress_props"
                     >
                         LinearProgress Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

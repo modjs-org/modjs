@@ -65,7 +65,13 @@ const CoreNavigation = () => {
 
     return (
         <>
-            <Link variant="icon" mb={16}>
+            <Link
+                variant="icon"
+                mb={16}
+                href="https://github.com/modjs-org/modjs/tree/main/packages/core"
+                target="_blank"
+                data-testid="CoreNavigation_link-github"
+            >
                 Github Repository <GithubIcon />
             </Link>
             {/* Getting Started */}
@@ -75,7 +81,7 @@ const CoreNavigation = () => {
                 notched={false}
                 defaultOpen={gettingStartedAccordionOpen}
             >
-                <AccordionTitle>
+                <AccordionTitle data-testid="CoreNavigation_accordion-getting_started">
                     <Typography variant="h3">Getting Started</Typography>
                 </AccordionTitle>
                 <AccordionContent ref={gettingStartedAccordionRef}>
@@ -85,6 +91,7 @@ const CoreNavigation = () => {
                                 variant="transparent"
                                 href="/core/installation"
                                 active={/core\/installation$/.test(currentPage)}
+                                data-testid="CoreNavigation_link-installation"
                             >
                                 Installation
                             </Link>
@@ -96,6 +103,7 @@ const CoreNavigation = () => {
                                 active={/core\/customization$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-customization"
                             >
                                 Customization
                             </Link>
@@ -108,7 +116,7 @@ const CoreNavigation = () => {
                 notched={false}
                 defaultOpen={apiAccordionOpen}
             >
-                <AccordionTitle>
+                <AccordionTitle data-testid="CoreNavigation_accordion-component_api">
                     <Typography variant="h3">Component API</Typography>
                 </AccordionTitle>
                 <AccordionContent ref={apiAccordionRef}>
@@ -120,6 +128,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-accordion$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-accordion-api"
                             >
                                 Accordion
                             </Link>
@@ -131,6 +140,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-accordion-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-accordion_content-api"
                             >
                                 AccordionContent
                             </Link>
@@ -142,6 +152,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-accordion-title$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-accordion_title-api"
                             >
                                 AccordionTitle
                             </Link>
@@ -153,6 +164,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-appbar$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-appbar-api"
                             >
                                 Appbar
                             </Link>
@@ -164,6 +176,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-article$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-article-api"
                             >
                                 Article
                             </Link>
@@ -175,6 +188,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-aside$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-aside-api"
                             >
                                 Aside
                             </Link>
@@ -186,6 +200,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-avatar$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-avatar-api"
                             >
                                 Avatar
                             </Link>
@@ -197,6 +212,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-box$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-box-api"
                             >
                                 Box
                             </Link>
@@ -208,6 +224,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-breadcrumbs$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-breadcrumbs-api"
                             >
                                 Breadcrumbs
                             </Link>
@@ -219,6 +236,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-button$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-button-api"
                             >
                                 Button
                             </Link>
@@ -230,6 +248,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card-api"
                             >
                                 Card
                             </Link>
@@ -241,6 +260,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card_content-api"
                             >
                                 CardContent
                             </Link>
@@ -252,6 +272,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card-footer$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card_footer-api"
                             >
                                 CardFooter
                             </Link>
@@ -263,6 +284,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card-header$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card_header-api"
                             >
                                 CardHeader
                             </Link>
@@ -274,6 +296,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card-media$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card_media-api"
                             >
                                 CardMedia
                             </Link>
@@ -285,6 +308,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-card-meta$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-card_meta-api"
                             >
                                 CardMeta
                             </Link>
@@ -296,6 +320,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel-api"
                             >
                                 Carousel
                             </Link>
@@ -307,6 +332,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel-description$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel_description-api"
                             >
                                 CarouselDescription
                             </Link>
@@ -318,6 +344,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel-excerpt$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel_excerpt-api"
                             >
                                 CarouselExcerpt
                             </Link>
@@ -329,6 +356,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel-footer$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel_footer-api"
                             >
                                 CarouselFooter
                             </Link>
@@ -340,6 +368,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel-item$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel_item-api"
                             >
                                 CarouselItem
                             </Link>
@@ -351,6 +380,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-carousel-media$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-carousel_media-api"
                             >
                                 CarouselMedia
                             </Link>
@@ -362,6 +392,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-code-editor$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-code_editor-api"
                             >
                                 CodeEditor
                             </Link>
@@ -373,6 +404,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-confirm-password-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-confirm_password_field-api"
                             >
                                 ConfirmPasswordField
                             </Link>
@@ -384,6 +416,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-container$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-container-api"
                             >
                                 Container
                             </Link>
@@ -395,6 +428,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-copy$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-copy-api"
                             >
                                 Copy
                             </Link>
@@ -406,6 +440,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-copy-response$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-copy_response-api"
                             >
                                 CopyResponse
                             </Link>
@@ -417,6 +452,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-create-password-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-create_password_field-api"
                             >
                                 CreatePasswordField
                             </Link>
@@ -428,6 +464,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-drawer$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-drawer-api"
                             >
                                 Drawer
                             </Link>
@@ -439,6 +476,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-drawer-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-drawer_content-api"
                             >
                                 DrawerContent
                             </Link>
@@ -450,6 +488,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-dropdown$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-dropdown-api"
                             >
                                 Dropdown
                             </Link>
@@ -461,6 +500,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-dropdown-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-dropdown_content-api"
                             >
                                 DropdownContent
                             </Link>
@@ -472,6 +512,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-email-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-email_field-api"
                             >
                                 EmailField
                             </Link>
@@ -483,6 +524,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-fieldset$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-fieldset-api"
                             >
                                 Fieldset
                             </Link>
@@ -494,6 +536,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-footer$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-footer-api"
                             >
                                 Footer
                             </Link>
@@ -505,6 +548,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-form$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-form-api"
                             >
                                 Form
                             </Link>
@@ -516,6 +560,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-grid$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-grid-api"
                             >
                                 Grid
                             </Link>
@@ -527,6 +572,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-header$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-header-api"
                             >
                                 Header
                             </Link>
@@ -538,6 +584,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-image$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-image-api"
                             >
                                 Image
                             </Link>
@@ -549,6 +596,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-layout$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-layout-api"
                             >
                                 Layout
                             </Link>
@@ -560,6 +608,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-linear-progress$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-linear_progress-api"
                             >
                                 LinearProgress
                             </Link>
@@ -571,6 +620,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-link$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-link-api"
                             >
                                 Link
                             </Link>
@@ -582,6 +632,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-list$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-list-api"
                             >
                                 List
                             </Link>
@@ -593,6 +644,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-main$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-main-api"
                             >
                                 Main
                             </Link>
@@ -604,6 +656,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-message-area$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-message_area-api"
                             >
                                 MessageArea
                             </Link>
@@ -615,6 +668,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-modal$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-modal-api"
                             >
                                 Modal
                             </Link>
@@ -626,6 +680,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-modal-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-modal_content-api"
                             >
                                 ModalContent
                             </Link>
@@ -637,6 +692,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-name-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-name_field-api"
                             >
                                 NameField
                             </Link>
@@ -648,6 +704,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-nav$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-nav-api"
                             >
                                 Nav
                             </Link>
@@ -659,6 +716,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-ordered-list$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-ordered_list-api"
                             >
                                 OrderedList
                             </Link>
@@ -670,6 +728,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-password-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-password_field-api"
                             >
                                 PasswordField
                             </Link>
@@ -681,6 +740,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-phone-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-phone_field-api"
                             >
                                 PhoneField
                             </Link>
@@ -692,6 +752,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-pill$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-pill-api"
                             >
                                 Pill
                             </Link>
@@ -703,6 +764,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-pre$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-pre-api"
                             >
                                 Pre
                             </Link>
@@ -715,6 +777,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-search-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-search_field-api"
                             >
                                 SearchField
                             </Link>
@@ -726,6 +789,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-search-results$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-search_results-api"
                             >
                                 SearchResults
                             </Link>
@@ -737,6 +801,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-section$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-section-api"
                             >
                                 Section
                             </Link>
@@ -748,6 +813,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-separator$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-separator-api"
                             >
                                 Separator
                             </Link>
@@ -759,6 +825,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-side-navigation$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-side_navigation-api"
                             >
                                 SideNavigation
                             </Link>
@@ -770,6 +837,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow-api"
                             >
                                 Slideshow
                             </Link>
@@ -781,6 +849,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow-description$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow_description-api"
                             >
                                 SlideshowDescription
                             </Link>
@@ -792,6 +861,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow-excerpt$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow_excerpt-api"
                             >
                                 SlideshowExcerpt
                             </Link>
@@ -803,6 +873,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow-footer$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow_footer-api"
                             >
                                 SlideshowFooter
                             </Link>
@@ -814,6 +885,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow-item$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow_item-api"
                             >
                                 SlideshowItem
                             </Link>
@@ -825,6 +897,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-slideshow-media$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-slideshow_media-api"
                             >
                                 SlideshowMedia
                             </Link>
@@ -836,6 +909,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-snackbar$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-snackbar-api"
                             >
                                 Snackbar
                             </Link>
@@ -847,6 +921,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-snackbar-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-snackbar_content-api"
                             >
                                 SnackbarContent
                             </Link>
@@ -858,6 +933,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-snackbar-header$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-snackbar_header-api"
                             >
                                 SnackbarHeader
                             </Link>
@@ -869,6 +945,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table-api"
                             >
                                 Table
                             </Link>
@@ -880,6 +957,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table-body$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table_body-api"
                             >
                                 TableBody
                             </Link>
@@ -891,6 +969,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table-data$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table_data-api"
                             >
                                 TableData
                             </Link>
@@ -902,6 +981,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table-head$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table_head-api"
                             >
                                 TableHead
                             </Link>
@@ -913,6 +993,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table-header$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table_header-api"
                             >
                                 TableHeader
                             </Link>
@@ -924,6 +1005,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-table-row$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-table_row-api"
                             >
                                 TableRow
                             </Link>
@@ -935,6 +1017,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-text-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-text_field-api"
                             >
                                 TextField
                             </Link>
@@ -946,6 +1029,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-textarea$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-textarea-api"
                             >
                                 TextArea
                             </Link>
@@ -958,6 +1042,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-toolbar$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-toolbar-api"
                             >
                                 Toolbar
                             </Link>
@@ -969,6 +1054,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-tooltip$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-tooltip-api"
                             >
                                 Tooltip
                             </Link>
@@ -980,6 +1066,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-tooltip-content$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-tooltip_content-api"
                             >
                                 TooltipContent
                             </Link>
@@ -991,6 +1078,7 @@ const CoreNavigation = () => {
                                 active={/api\/react-typography$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-typography-api"
                             >
                                 Typography API
                             </Link>
@@ -1002,6 +1090,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-unordered-list$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-unordered_list-api"
                             >
                                 UnorderedList
                             </Link>
@@ -1013,6 +1102,7 @@ const CoreNavigation = () => {
                                 active={/core\/api\/react-url-field$/.test(
                                     currentPage,
                                 )}
+                                data-testid="CoreNavigation_link-url_field-api"
                             >
                                 UrlField
                             </Link>

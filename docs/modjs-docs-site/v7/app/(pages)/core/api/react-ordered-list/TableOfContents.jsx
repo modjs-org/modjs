@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#ordered-list-api"
                         active={/#ordered-list-api$/.test(fragmentId)}
+                        data-testid="ordered_list_api"
                     >
                         OrderedList API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#ordered-list-props"
                         active={/#ordered-list-props$/.test(fragmentId)}
+                        data-testid="ordered_list_props"
                     >
                         OrderedList Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

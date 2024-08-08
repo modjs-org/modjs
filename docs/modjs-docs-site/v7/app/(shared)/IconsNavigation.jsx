@@ -65,7 +65,13 @@ const IconsNavigation = () => {
 
     return (
         <>
-            <Link variant="icon" mb={16}>
+            <Link
+                variant="icon"
+                mb={16}
+                href="https://github.com/modjs-org/modjs/tree/main/packages/icons"
+                target="_blank"
+                data-testid="IconsNavigation_link-github"
+            >
                 Github Repository <GithubIcon />
             </Link>
             {/* Getting Started */}
@@ -74,7 +80,7 @@ const IconsNavigation = () => {
                 notched={false}
                 defaultOpen={gettingStartedAccordionOpen}
             >
-                <AccordionTitle>
+                <AccordionTitle data-testid="IconsNavigation_accordion-getting_started">
                     <Typography variant="h3">Getting Started</Typography>
                 </AccordionTitle>
                 <AccordionContent ref={gettingStartedAccordionRef}>
@@ -86,6 +92,7 @@ const IconsNavigation = () => {
                                 active={/icons\/installation$/.test(
                                     currentPage,
                                 )}
+                                data-testid="IconsNavigation_link-installation"
                             >
                                 Installation
                             </Link>
@@ -97,6 +104,7 @@ const IconsNavigation = () => {
                                 active={/icons\/customization$/.test(
                                     currentPage,
                                 )}
+                                data-testid="IconsNavigation_link-customization"
                             >
                                 Customization
                             </Link>
@@ -110,7 +118,7 @@ const IconsNavigation = () => {
                 notched={false}
                 defaultOpen={apiAccordionOpen}
             >
-                <AccordionTitle>
+                <AccordionTitle data-testid="IconsNavigation_accordion-component_api">
                     <Typography variant="h3">Component API</Typography>
                 </AccordionTitle>
                 <AccordionContent ref={apiAccordionRef}>
@@ -120,6 +128,7 @@ const IconsNavigation = () => {
                                 variant="transparent"
                                 href="/icons/api"
                                 active={/icons\/api$/.test(currentPage)}
+                                data-testid="IconsNavigation_link-icons_api"
                             >
                                 Icons API
                             </Link>

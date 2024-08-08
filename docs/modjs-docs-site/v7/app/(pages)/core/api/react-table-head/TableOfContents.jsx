@@ -25,6 +25,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#table-head-api"
                         active={/#table-head-api$/.test(fragmentId)}
+                        data-testid="table_head_api"
                     >
                         TableHead API
                     </Link>
@@ -34,6 +35,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#import"
                         active={/#import$/.test(fragmentId)}
+                        data-testid="import"
                     >
                         Import
                     </Link>
@@ -44,6 +46,7 @@ const TableOfContents = () => {
                         variant="transparent"
                         href="#table-head-props"
                         active={/#table-head-props$/.test(fragmentId)}
+                        data-testid="table_head_props"
                     >
                         TableHead Props
                     </Link>
@@ -55,6 +58,7 @@ const TableOfContents = () => {
                         fw="bold"
                         href="#system-props"
                         active={/#system-props$/.test(fragmentId)}
+                        data-testid="system_props"
                     >
                         System Props
                     </Link>

@@ -22,6 +22,7 @@ const searchResults = [
     { title: 'Icons Installation', link: '/icons/installation' },
     { title: 'Icons Customization', link: '/icons/customization' },
     { title: 'Icon API', link: '/icons/api' },
+
     { title: 'Accordion API', link: '/core/api/react-accordion' },
     {
         title: 'AccordionContent API',
@@ -32,7 +33,6 @@ const searchResults = [
         link: '/core/api/react-accordion-title',
     },
     { title: 'Appbar API', link: '/core/api/react-appbar' },
-    { title: 'AppbarMobile API', link: '/core/api/react-appbar-mobile' },
     { title: 'Article API', link: '/core/api/react-article' },
     { title: 'Aside API', link: '/core/api/react-aside' },
     { title: 'Avatar API', link: '/core/api/react-avatar' },
@@ -154,7 +154,12 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                 <Tooltip
                     arrow={true}
                     el={
-                        <Button variant="icon" notched={true} id={toggleOpenId}>
+                        <Button
+                            variant="icon"
+                            notched={true}
+                            id={toggleOpenId}
+                            data-testid="GlobalSearch_btn-toggle_search_modal"
+                        >
                             <SearchIcon />
                         </Button>
                     }
@@ -224,12 +229,20 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
 
                         <Grid columns={2} gap={16}>
                             <Card>
-                                <Link variant="transparent" href="/core">
+                                <Link
+                                    variant="transparent"
+                                    href="/core"
+                                    data-testid="GlobalSearch_link-core"
+                                >
                                     @modjs/core
                                 </Link>
                             </Card>
                             <Card>
-                                <Link variant="transparent" href="/icons">
+                                <Link
+                                    variant="transparent"
+                                    href="/icons"
+                                    data-testid="GlobalSearch_link-icons"
+                                >
                                     @modjs/icons
                                 </Link>
                             </Card>
@@ -239,6 +252,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                                 <Link
                                     variant="transparent"
                                     href="/core/installation"
+                                    data-testid="GlobalSearch_link-core_installation"
                                 >
                                     Core Installation
                                 </Link>
@@ -247,6 +261,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                                 <Link
                                     variant="transparent"
                                     href="/icons/installation"
+                                    data-testid="GlobalSearch_link-icons_installation"
                                 >
                                     Icons Installation
                                 </Link>
@@ -257,6 +272,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                                 <Link
                                     variant="transparent"
                                     href="/core/customization"
+                                    data-testid="GlobalSearch_link-core_customization"
                                 >
                                     Core Customization
                                 </Link>
@@ -265,6 +281,7 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                                 <Link
                                     variant="transparent"
                                     href="/icons/customization"
+                                    data-testid="GlobalSearch_link-icons_customization"
                                 >
                                     Icons Customization
                                 </Link>
@@ -275,12 +292,17 @@ const GlobalSearch = ({ toggleOpenId, toggleCloseId, searchFieldId }) => {
                                 <Link
                                     variant="transparent"
                                     href="/core/api/react-accordion"
+                                    data-testid="GlobalSearch_link-core_api"
                                 >
                                     Core API
                                 </Link>
                             </Card>
                             <Card>
-                                <Link variant="transparent" href="/icons/api">
+                                <Link
+                                    variant="transparent"
+                                    href="/icons/api"
+                                    data-testid="GlobalSearch_link-icons_api"
+                                >
                                     Icons API
                                 </Link>
                             </Card>

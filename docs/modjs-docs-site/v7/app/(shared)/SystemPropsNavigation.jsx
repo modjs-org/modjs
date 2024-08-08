@@ -17,6 +17,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#align-items"
                     active={/#align-items$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-align_items"
                 >
                     alignItems
                 </Link>
@@ -26,6 +27,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#bgColor"
                     active={/#bgColor$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-bgColor"
                 >
                     bgColor
                 </Link>
@@ -35,6 +37,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#bottom"
                     active={/#bottom$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-bottom"
                 >
                     bottom
                 </Link>
@@ -44,6 +47,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border"
                     active={/#border$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border"
                 >
                     border
                 </Link>
@@ -54,6 +58,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-top"
                     active={/#border-top$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_top"
                 >
                     borderTop
                 </Link>
@@ -63,6 +68,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-right"
                     active={/#border-right$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_right"
                 >
                     borderRight
                 </Link>
@@ -72,6 +78,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-bottom"
                     active={/#border-bottom$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_bottom"
                 >
                     borderBottom
                 </Link>
@@ -81,6 +88,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-left"
                     active={/#border-left$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_left"
                 >
                     borderLeft
                 </Link>
@@ -90,6 +98,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-x"
                     active={/#border-x$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_x"
                 >
                     borderX
                 </Link>
@@ -99,6 +108,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-y"
                     active={/#border-y$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_y"
                 >
                     borderY
                 </Link>
@@ -108,6 +118,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#border-radius"
                     active={/#border-radius$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-border_radius"
                 >
                     borderRadius
                 </Link>
@@ -117,6 +128,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#color"
                     active={/#color$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-color"
                 >
                     color
                 </Link>
@@ -126,6 +138,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#display"
                     active={/#display$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-display"
                 >
                     display
                 </Link>
@@ -135,6 +148,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#elevation"
                     active={/#elevation$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-elavation"
                 >
                     elevation
                 </Link>
@@ -144,6 +158,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#flex-wrap"
                     active={/#flex-wrap$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-flex_wrap"
                 >
                     flexWrap
                 </Link>
@@ -153,6 +168,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#float"
                     active={/#float$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-float"
                 >
                     float
                 </Link>
@@ -162,6 +178,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#fs"
                     active={/#fs$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-fs"
                 >
                     fs
                 </Link>
@@ -171,6 +188,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#fw"
                     active={/#fw$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-fw"
                 >
                     fw
                 </Link>
@@ -180,6 +198,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#gap"
                     active={/#gap$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-gap"
                 >
                     gap
                 </Link>
@@ -189,6 +208,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#height"
                     active={/#height$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-height"
                 >
                     height
                 </Link>
@@ -198,6 +218,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#justify-content"
                     active={/#justify-content$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-justify_content"
                 >
                     justifyContent
                 </Link>
@@ -207,6 +228,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#left"
                     active={/#left$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-left"
                 >
                     left
                 </Link>
@@ -216,6 +238,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#m"
                     active={/#m$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-m"
                 >
                     m
                 </Link>
@@ -225,6 +248,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#mt"
                     active={/#mt$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-mt"
                 >
                     mt
                 </Link>
@@ -234,6 +258,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#mr"
                     active={/#mr$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-mr"
                 >
                     mr
                 </Link>
@@ -243,6 +268,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#mb"
                     active={/#mb$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-mb"
                 >
                     mb
                 </Link>
@@ -252,6 +278,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#ml"
                     active={/#ml$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-ml"
                 >
                     ml
                 </Link>
@@ -261,6 +288,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#mx"
                     active={/#mx$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-mx"
                 >
                     mx
                 </Link>
@@ -270,6 +298,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#my"
                     active={/#my$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-my"
                 >
                     my
                 </Link>
@@ -279,6 +308,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#p"
                     active={/#p$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-p"
                 >
                     p
                 </Link>
@@ -288,6 +318,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#pt"
                     active={/#pt$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-pt"
                 >
                     pt
                 </Link>
@@ -297,6 +328,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#pr"
                     active={/#pr$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-pr"
                 >
                     pr
                 </Link>
@@ -306,6 +338,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#pb"
                     active={/#pb$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-pb"
                 >
                     pb
                 </Link>
@@ -315,6 +348,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#pl"
                     active={/#pl$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-pl"
                 >
                     pl
                 </Link>
@@ -324,6 +358,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#px"
                     active={/#px$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-px"
                 >
                     px
                 </Link>
@@ -333,6 +368,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#py"
                     active={/#py$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-py"
                 >
                     py
                 </Link>
@@ -342,6 +378,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#position"
                     active={/#position$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-position"
                 >
                     position
                 </Link>
@@ -351,6 +388,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#right"
                     active={/#right$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-right"
                 >
                     right
                 </Link>
@@ -360,6 +398,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#text-transform"
                     active={/#text-transform$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-text_transform"
                 >
                     textTransform
                 </Link>
@@ -369,6 +408,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#text-align"
                     active={/#text-align$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-text_align"
                 >
                     textAlign
                 </Link>
@@ -379,6 +419,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#top"
                     active={/#top$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-top"
                 >
                     top
                 </Link>
@@ -388,6 +429,7 @@ const SystemPropsNavigation = () => {
                     variant="transparent"
                     href="#width"
                     active={/#width$/.test(fragmentId)}
+                    data-testid="SystemPropsNavigation_link-width"
                 >
                     width
                 </Link>
