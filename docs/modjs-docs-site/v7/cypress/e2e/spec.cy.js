@@ -2808,9 +2808,9 @@ describe('Mod.js Documentation Site', () => {
                     })
                 })
                 context('/icons', () => {
-                    context('/core/installation', () => {})
+                    context('/icons/installation', () => {})
                     context('/icons/customization', () => {})
-                    context('/core/api', () => {})
+                    context('/icons/api', () => {})
                 })
             })
         })

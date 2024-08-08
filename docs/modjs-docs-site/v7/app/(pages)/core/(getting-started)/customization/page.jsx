@@ -59,11 +59,13 @@ export default function Page() {
                 <Box display="flex">
                     {/* Core Navigation */}
 
-                    <SideNavigation>
-                        <Container fluid={true}>
-                            {lgScreen && <CoreNavigation />}
-                        </Container>
-                    </SideNavigation>
+                    {lgScreen && (
+                        <SideNavigation>
+                            <Container fluid={true}>
+                                <CoreNavigation />
+                            </Container>
+                        </SideNavigation>
+                    )}
                     {/* Main Content */}
                     <MainContent
                         borderLeft={

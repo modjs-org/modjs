@@ -65,11 +65,13 @@ export default function Page() {
                 <Box display="flex">
                     {/* Core Navigation */}
 
-                    <SideNavigation>
-                        <Container fluid={true}>
-                            {lgScreen && <IconsNavigation />}
-                        </Container>
-                    </SideNavigation>
+                    {lgScreen && (
+                        <SideNavigation>
+                            <Container fluid={true}>
+                                <IconsNavigation />
+                            </Container>
+                        </SideNavigation>
+                    )}
 
                     {/* Main Content */}
                     <MainContent
