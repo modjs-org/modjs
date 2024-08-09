@@ -79,7 +79,7 @@ const ReactIcon = (
       C228.755585,72.262863 220.568008,67.279015 212.025299,61.516426 z"
             />
             <path
-                fill="#00D8FF"
+                fill="#58c4dc"
                 opacity="1.ffffff"
                 stroke="none"
                 d="M212.334503,61.732948 
@@ -440,7 +440,7 @@ const ReactIcon = (
       C280.686127,159.000595 278.935944,159.000595 276.723267,159.000580 z"
             />
             <path
-                fill="#00D8FF"
+                fill="#58c4dc"
                 opacity="1.ffffff"
                 stroke="none"
                 d="M221.211426,231.297760 
