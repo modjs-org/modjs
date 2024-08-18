@@ -1,0 +1,45 @@
+{
+  "name": "@modjs/docs-site",
+  "version": "7.0.0",
+  "keywords": [
+    "modjs"
+  ],
+  "author": "Prashan Pudasaini",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modjs-org/modjs.git"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "clean": "rm -rf ./out rm -rf ./.next",
+    "lint": "next lint",
+    "format": "prettier --write \"app/**/*.+(js|jsx|json|css|ts|tsx)\"",
+    "test:e2e:ui": "cypress open",
+    "test:e2e:headless": "cypress run",
+    "preDeploy": "npm-run-all -l clean -s format test:e2e:headless build"
+  },
+  "dependencies": {
+    "@modjs/utils": "file:../../../packages/utils",
+    "@modjs/helpers": "file:../../../packages/helpers",
+    "@modjs/icons": "file:../../../packages/icons",
+    "@modjs/core": "file:../../../packages/core",
+    "next": "^14.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.1",
+    "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
+    "styled-components": "^6.1.11"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.1.4"
+  }
+}

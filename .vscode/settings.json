@@ -1,0 +1,25 @@
+{
+    "eslint.experimental.useFlatConfig": true, //Set to true to enable visual warnings and error in the editor
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true, //Set to true for ts files
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true, //Set to true for tsx files
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true, //Set to true for js files
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.formatOnSave": true, //Set to true for jsx files
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    
+    "editor.scrollbar.verticalScrollbarSize": 14
+}
