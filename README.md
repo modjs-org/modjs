@@ -7,6 +7,10 @@
 `npm run build:icons`
 `npm run build:core`
 
+### To start the documentation site, run the following scipt from the project's root dir:
+
+`npm run start:docs`
+
 ### To start core package in cypress, run the following scipt from the project's root dir:
 
 `npm run test:core`
