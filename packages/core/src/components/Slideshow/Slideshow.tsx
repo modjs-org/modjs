@@ -14,6 +14,7 @@ interface ModSlideshowProps extends React.TouchEventHandler<HTMLDivElement> {
     currentIndex?: number
     slides?: []
     displayCount?: boolean
+    displayNavigation?: boolean
     handleSlideChange?: () => void
     children: React.ReactNode
     ref?: React.Ref<HTMLElement>
@@ -59,6 +60,7 @@ const Slideshow = (
     {
         slides,
         displayCount,
+        displayNavigation,
         children,
         handleSlideChange,
         ...props
@@ -131,6 +133,14 @@ const Slideshow = (
                 ref={ref}
                 data-test="slideshow"
             >
+                <ModSlideshowItems
+                    currentIndex={currentIndex}
+                    data-test="slideshow-items"
+                >
+                    {children}
+                </ModSlideshowItems>
+            </ModSlideshow>
+            {displayNavigation && (
                 <ModSlideshowNavigation data-test="slideshow-navigation">
                     <Button
                         type="button"
@@ -138,6 +148,7 @@ const Slideshow = (
                         disabled={currentIndex > 0 ? false : true}
                         variant="transparent"
                         data-testid="prev"
+                        display="none" //hide the button but is used to advance to next slide
                     >
                         <LeftArrowIcon
                             height="3rem"
@@ -151,6 +162,8 @@ const Slideshow = (
                         disabled={currentIndex < length - 1 ? false : true}
                         variant="transparent"
                         data-testid="next"
+                        id="next-btn"
+                        display="none" //hide the button but is used to advance to next slide
                     >
                         <RightArrowIcon
                             height="3rem"
@@ -163,13 +176,7 @@ const Slideshow = (
                         />
                     </Button>
                 </ModSlideshowNavigation>
-                <ModSlideshowItems
-                    currentIndex={currentIndex}
-                    data-test="slideshow-items"
-                >
-                    {children}
-                </ModSlideshowItems>
-            </ModSlideshow>
+            )}
             {displayCount && (
                 <Box gap={8} flexWrap="wrap">
                     {slides &&
