@@ -3,24 +3,24 @@ import { styled } from 'styled-components'
 import '../../../cypress/fixtures/style.css'
 import { ModThemeProvider, ModLightTheme, ModDarkTheme } from '@modjs/utils'
 
-import FullStackProIcon from './FullStackProIcon'
+import PrashanIcon from './PrashanIcon'
 
-describe('<FullStackProIcon>', () => {
+describe('<PrashanIcon>', () => {
     context('Render', () => {
-        it('should render default FullStackProIcon component', () => {
+        it('should render default PrashanIcon component', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon />
+                    <PrashanIcon />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]').should('exist')
+            cy.get('[data-test="prashan-icon"]').should('exist')
         })
     })
     context('Props', () => {
         it('should include only valid props in the DOM element and not include any custom attributes from modjs', () => {
             cy.mount(
                 <ModThemeProvider theme={ModDarkTheme}>
-                    <FullStackProIcon
+                    <PrashanIcon
                         m={32}
                         p={32}
                         className="test-class"
@@ -29,51 +29,39 @@ describe('<FullStackProIcon>', () => {
                     />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]').should(
-                'have.attr',
-                'class',
-            )
-            cy.get('[data-test="fullstackpro-icon"]').should(
-                'have.attr',
-                'style',
-            )
-            cy.get('[data-test="fullstackpro-icon"]').should(
+            cy.get('[data-test="prashan-icon"]').should('have.attr', 'class')
+            cy.get('[data-test="prashan-icon"]').should('have.attr', 'style')
+            cy.get('[data-test="prashan-icon"]').should(
                 'have.attr',
                 'data-testid',
             )
-            cy.get('[data-test="fullstackpro-icon"]').should(
-                'not.have.attr',
-                'm',
-            )
-            cy.get('[data-test="fullstackpro-icon"]').should(
-                'not.have.attr',
-                'p',
-            )
+            cy.get('[data-test="prashan-icon"]').should('not.have.attr', 'm')
+            cy.get('[data-test="prashan-icon"]').should('not.have.attr', 'p')
         })
     })
     context('Global and Custom Styles', () => {
         it('should override default styles add new styles with styles from withSystemProps HOC', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon m={32} p={32} />
+                    <PrashanIcon m={32} p={32} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'padding', '32px')
                 .and('have.css', 'margin', '32px')
         })
         it('should override as well as add styles when wrapped with styled() from styled components', () => {
-            const StyledFullStackProIcon = styled(FullStackProIcon)`
+            const StyledPrashanIcon = styled(PrashanIcon)`
                 margin: 32px;
                 padding: 32px;
             `
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <StyledFullStackProIcon m={32} p={32} />
+                    <StyledPrashanIcon m={32} p={32} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'padding', '32px')
                 .and('have.css', 'margin', '32px')
@@ -81,12 +69,10 @@ describe('<FullStackProIcon>', () => {
         it('should add inline styles with highest precedence', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon
-                        style={{ margin: '32px', padding: '32px' }}
-                    />
+                    <PrashanIcon style={{ margin: '32px', padding: '32px' }} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'padding', '32px')
                 .and('have.css', 'margin', '32px')
@@ -94,10 +80,10 @@ describe('<FullStackProIcon>', () => {
         it('should add custom classNames and override as well as add styles from a separate css file', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon className="test" />
+                    <PrashanIcon className="test" />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'padding', '32px')
                 .and('have.css', 'margin', '32px')
@@ -107,10 +93,10 @@ describe('<FullStackProIcon>', () => {
         it('should apply default fill property', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon />
+                    <PrashanIcon />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .find('g')
                 .should('exist')
                 .and('have.css', 'fill', 'rgb(31, 142, 255)')
@@ -118,10 +104,10 @@ describe('<FullStackProIcon>', () => {
         it('should apply hardcoded fill property', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon fill="#000000" />
+                    <PrashanIcon fill="#000000" />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .find('g')
                 .should('exist')
                 .and('have.css', 'fill', 'rgb(0, 0, 0)')
@@ -129,10 +115,10 @@ describe('<FullStackProIcon>', () => {
         it('should apply fill property from current theme', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon fill={ModLightTheme.color.success} />
+                    <PrashanIcon fill={ModLightTheme.color.success} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .find('g')
                 .and('have.css', 'fill', 'rgb(90, 107, 49)')
@@ -140,60 +126,60 @@ describe('<FullStackProIcon>', () => {
         it('should apply default height', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon />
+                    <PrashanIcon />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'height', '64px')
         })
         it('should apply hardcoded height', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon height="32px" />
+                    <PrashanIcon height="32px" />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'height', '32px')
         })
         it('should apply height property from current theme', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon height={ModLightTheme.icons.height.lg} />
+                    <PrashanIcon height={ModLightTheme.icons.height.lg} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'height', '64px')
         })
         it('should apply default width', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon />
+                    <PrashanIcon />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'width', '64px')
         })
         it('should apply hardcoded width', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon width="32px" />
+                    <PrashanIcon width="32px" />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'width', '32px')
         })
         it('should apply width property from current theme', () => {
             cy.mount(
                 <ModThemeProvider theme={ModLightTheme}>
-                    <FullStackProIcon width={ModLightTheme.icons.height.lg} />
+                    <PrashanIcon width={ModLightTheme.icons.height.lg} />
                 </ModThemeProvider>,
             )
-            cy.get('[data-test="fullstackpro-icon"]')
+            cy.get('[data-test="prashan-icon"]')
                 .should('exist')
                 .and('have.css', 'width', '64px')
         })

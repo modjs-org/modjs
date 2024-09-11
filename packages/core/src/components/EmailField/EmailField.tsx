@@ -200,7 +200,7 @@ const EmailField = (
                     type={type ? type : 'text'}
                     name={name ? name : 'email'}
                     id={id ? id : 'email'}
-                    value={inputValue}
+                    // value={inputValue} //TODO: cannot hardcode value like this. Form fields must reset after submission.
                     onFocus={() => setActive(true)}
                     onBlur={() => setActive(false)}
                     onInput={handleInput}

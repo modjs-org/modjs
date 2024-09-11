@@ -187,7 +187,7 @@ const TextArea = ({
                     autoComplete={autoComplete ? autoComplete : 'off'}
                     type={type ? type : 'text'}
                     rows={rows ? rows : '9'}
-                    value={inputValue}
+                    // value={inputValue} //TODO: cannot hardcode value like this. Form fields must reset after submission.
                     onFocus={() => setActive(true)}
                     onBlur={() => setActive(false)}
                     onInput={handleInput}

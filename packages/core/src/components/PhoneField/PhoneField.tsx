@@ -203,7 +203,7 @@ const PhoneField = (
                     type={type ? type : 'text'}
                     name={name ? name : 'phone'}
                     id={id ? id : 'phone'}
-                    value={inputValue}
+                    // value={inputValue} //TODO: cannot hardcode value like this. Form fields must reset after submission.
                     onFocus={() => setActive(true)}
                     onBlur={() => setActive(false)}
                     onInput={handleInput}

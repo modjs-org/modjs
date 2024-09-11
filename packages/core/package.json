@@ -1,6 +1,6 @@
 {
   "name": "@modjs/core",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "sideEffects": false,
   "main": "./build/cjs/index.js",
   "module": "./build/esm/index.js",

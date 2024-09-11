@@ -25,7 +25,6 @@ import FacebookIcon from './components/FacebookIcon/FacebookIcon'
 import FlutterIcon from './components/FlutterIcon/FlutterIcon'
 import ForwardSlashIcon from './components/ForwardSlashIcon/ForwardSlashIcon'
 import FrontendIcon from './components/FrontendIcon/FrontendIcon'
-import FullStackProIcon from './components/FullStackProIcon/FullStackProIcon'
 import GithubIcon from './components/GithubIcon/GithubIcon'
 import GithubLogo from './components/GithubLogo/GithubLogo'
 import GitIcon from './components/GitIcon/GitIcon'
@@ -55,6 +54,7 @@ import PilotProIcon from './components/PilotProIcon/PilotProIcon'
 import PlayIcon from './components/PlayIcon/PlayIcon'
 import PlusIcon from './components/PlusIcon/PlusIcon'
 import PostgreSqlIcon from './components/PostgreSqlIcon/PostgreSqlIcon'
+import PrashanIcon from './components/PrashanIcon/PrashanIcon'
 import PythonIcon from './components/PythonIcon/PythonIcon'
 import QtIcon from './components/QtIcon/QtIcon'
 import QuoteIcon from './components/QuoteIcon/QuoteIcon'
@@ -106,7 +106,6 @@ export {
     FlutterIcon,
     ForwardSlashIcon,
     FrontendIcon,
-    FullStackProIcon,
     GithubIcon,
     GithubLogo,
     GitIcon,
@@ -136,6 +135,7 @@ export {
     PlayIcon,
     PlusIcon,
     PostgreSqlIcon,
+    PrashanIcon,
     PythonIcon,
     QtIcon,
     QuoteIcon,
