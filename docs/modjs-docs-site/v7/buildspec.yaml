@@ -15,13 +15,14 @@ phases:
       # - npm install react-router-dom
       # - npm install styled-components
       # - npm install
+      - ls -la node_modules/
+      - ls -la node_modules/@modjs
 
   build:
     commands:
       - npm run build:docs
   post_build:
     commands:
-      - ls -la node_modules/
       - ls -la node_modules/@modjs
       - ls -la 
       #CAUTION: Ensure correct path to the out folder in the monorepo
