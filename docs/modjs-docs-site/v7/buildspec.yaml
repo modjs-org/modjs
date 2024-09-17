@@ -8,8 +8,7 @@ phases:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - rm -rf node_modules
       - rm -rf package-lock.json
-      - sed -i '/"workspaces"/d' package.json || echo "No workspaces found in package.json"
-
+      - npm cache clean --force
       - npm install react
       - npm install react-dom
       - npm install react-router-dom
