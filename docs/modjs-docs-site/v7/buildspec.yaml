@@ -6,17 +6,11 @@ phases:
       nodejs: 20
     commands:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
-      - npm install @modjs/core@7.1.0
-      - npm install @modjs/icons@7.1.1
-      - npm install @modjs/utils@7.0.0
-      - npm install @modjs/helpers@7.0.0
-      - npm install next@14.2.2
-      - npm install react@18.3.1
-      - npm install react-dom@18.3.1
-      - npm install react-redux@9.1.1
-      - npm install redux@5.0.1
-      - npm install redux-thunk@3.1.0
-      - npm install styled-components@6.1.11
+      - npm install react
+      - npm install react-dom
+      - npm install react-router-dom
+      - npm install styled-components
+      - npm install
   build:
     commands:
       - npm run build:docs
