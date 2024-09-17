@@ -9,8 +9,6 @@ phases:
       - npm cache clean --force
       # Remove any leftover symlinks from node_modules
       - npm ci
-      - echo "Printing package-lock.json contents:"
-      - cat package-lock.json
       # - npm cache clean --force
       # - npm install react
       # - npm install react-dom
