@@ -16,7 +16,7 @@ phases:
       - npm run build:docs
   post_build:
     commands:
-      - ls -la node_modules/
+      - ls -la node_modules/@modjs
       - ls -la 
       #CAUTION: Ensure correct path to the out folder in the monorepo
       - ls -la docs/modjs-docs-site/v7/out/ || echo "OUT DIRECTORY DOES NOT EXIST"
