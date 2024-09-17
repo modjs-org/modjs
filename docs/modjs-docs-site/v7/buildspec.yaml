@@ -10,6 +10,8 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - echo "Node.js version:"
+      - node -v
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - npm cache clean --force
       - npm i
