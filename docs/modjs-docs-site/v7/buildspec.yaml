@@ -8,12 +8,7 @@ phases:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - npm cache clean --force
       # Remove any leftover symlinks from node_modules
-      - npm ci --workspaces=false
-      - npm install next@14.2.2
-      - npm install @modjs/core --workspaces=false
-      - npm install @modjs/icons --workspaces=false
-      - npm install @modjs/helpers --workspaces=false
-      - npm install @modjs/utils --workspaces=false
+      - npm ci
       - echo "Printing package-lock.json contents:"
       - cat package-lock.json
       # - npm cache clean --force
@@ -28,6 +23,7 @@ phases:
       - npm run build:docs
   post_build:
     commands:
+      - ls -la node_modules/
       - ls -la node_modules/@modjs
       - ls -la 
       #CAUTION: Ensure correct path to the out folder in the monorepo

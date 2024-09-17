@@ -26,7 +26,8 @@
     "url": "https://github.com/modjs-org/modjs.git"
   },
   "scripts": {
-    "clean:monorepo": "rm -rf ./node_modules ./package-lock.json ./docs/modjs-docs-site/v7/.next ./docs//modjs-docs-site/v7/node_modules ./docs//modjs-docs-site/v7/out ./docs//modjs-docs-site/v7/package-lock.json ./packages/core/build ./packages/core/node_modules ./packages/helpers/build ./packages/helpers/node_modules ./packages/helpers/coverage ./packages/icons/build ./packages/icons/node_modules ./packages/utils/build ./packages/utils/coverage ./packages/utils/node_modules",
+    "clean:docs": "rm -rf ./node_modules ./package-lock.json ./docs/modjs-docs-site/v7/.next ./docs//modjs-docs-site/v7/node_modules ./docs//modjs-docs-site/v7/out",
+    "clean:all": "rm -rf ./node_modules ./package-lock.json ./docs/modjs-docs-site/v7/.next ./docs//modjs-docs-site/v7/node_modules ./docs//modjs-docs-site/v7/out ./docs//modjs-docs-site/v7/package-lock.json ./packages/core/build ./packages/core/node_modules ./packages/helpers/build ./packages/helpers/node_modules ./packages/helpers/coverage ./packages/icons/build ./packages/icons/node_modules ./packages/utils/build ./packages/utils/coverage ./packages/utils/node_modules",
     "start:docs": "npm run dev --workspace docs",
     "test:docs": "npm run test:e2e:ui --workspace docs",
     "build:docs": "npm run build --workspace docs",
