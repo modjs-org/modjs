@@ -13,11 +13,10 @@ phases:
       - npm install react-dom
       - npm install react-router-dom
       - npm install styled-components
-      - npm install
-      - ls -la package-lock.json
+      - npm install --workspaces=false
   build:
     commands:
-      - npm run build:docs
+      - npx next build
   post_build:
     commands:
       - ls -la node_modules/@modjs
