@@ -14,7 +14,7 @@ phases:
       - npm cache clean --force
       # - ls -la node_modules/ #fails
       # - ls -la node_modules/@modjs #fails
-      - npm ci
+      - npm i
       # - npm cache clean --force
       # - npm install react
       # - npm install react-dom
