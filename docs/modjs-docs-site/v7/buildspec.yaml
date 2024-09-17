@@ -1,5 +1,10 @@
 version: 0.2
 
+artifacts:
+  files:
+    - '**/*'  # Adjust this pattern to include the specific files you want to include in the artifacts
+  enable-symlinks: yes  # Enable symlink support
+
 phases:
   install:
     runtime-versions:
