@@ -6,15 +6,66 @@ phases:
       nodejs: 20
     commands:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
+      - rm -rf node_modules
+      - rm -rf package-lock.json
+
       - npm install react
       - npm install react-dom
       - npm install react-router-dom
       - npm install styled-components
       - npm install
-      - npm install @modjs/core
-      - npm install @modjs/helpers
-      - npm install @modjs/icons
-      - npm install @modjs/utils
+
+      # Use jq to modify package-lock.json to resolve modjs packages from npm and not locally
+      - |
+        # Ensure jq is installed
+        if ! command -v jq &> /dev/null
+        then
+          echo "jq could not be found. Installing jq."
+          apt-get update && apt-get install -y jq
+        fi
+
+        # Modify package-lock.json
+        jq '.["node_modules/@modjs/core"] = {
+          "version": "7.1.0",
+          "resolved": "https://registry.npmjs.org/@modjs/core/-/core-7.1.0.tgz",
+          "integrity": "sha512-9g3XGZZRxQUHdoWNzqTJ4KoR1OoYz4SEjJdtcp4CKsBK+9pvT19mbY9XhjyVgjGmLd3cj2E/UCNKqTSBWaX5lg==",
+          "dependencies": {
+            "@modjs/helpers": "^7.0.0",
+            "@modjs/icons": "^7.0.0",
+            "@modjs/utils": "^7.0.0",
+            "highlight.js": "^11.9.0"
+          },
+          "peerDependencies": {
+            "react": "^18.3.1",
+            "react-dom": "^18.3.1",
+            "styled-components": "^6.1.11"
+          }
+        } | .["node_modules/@modjs/helpers"] = {
+          "version": "7.0.0",
+          "resolved": "https://registry.npmjs.org/@modjs/helpers/-/helpers-7.0.0.tgz",
+          "integrity": "sha512-5MfcGLnGcmoNZeX2LUADNU8hPbnUJCYvhkHtOtSUso0zdi6qEo9PLIAUEw0gbUZwlZWaA0ZJpTMoV19dUIpYwg=="
+        } | .["node_modules/@modjs/icons"] = {
+          "version": "7.1.1",
+          "resolved": "https://registry.npmjs.org/@modjs/icons/-/icons-7.1.1.tgz",
+          "integrity": "sha512-R+4E33RwLpj7zfxI8bHWvbbE4RtDnCHXV18XpqCqlzUHiDMCrXTXPM1KAMRsaPT+k6Iy+0vKlplwF4kLbFsdzQ==",
+          "dependencies": {
+            "@modjs/utils": "^7.0.0"
+          },
+          "peerDependencies": {
+            "react": "^18.3.1",
+            "react-dom": "^18.3.1",
+            "styled-components": "^6.1.11"
+          }
+        } | .["node_modules/@modjs/utils"] = {
+          "version": "7.0.0",
+          "resolved": "https://registry.npmjs.org/@modjs/utils/-/utils-7.0.0.tgz",
+          "integrity": "sha512-yKTD9bAYj6wOgWONgF4Schm0bGneQC40lCJobtwHUAF/sZcjy6P4vsCbV9m7Sa3l+Dq1oRBOu1QWkdGyIhd1qQ==",
+          "peerDependencies": {
+            "react": "^18.3.1",
+            "react-dom": "^18.3.1",
+            "styled-components": "^6.1.11"
+          }
+        }' package-lock.json
   build:
     commands:
       - npm run build:docs
