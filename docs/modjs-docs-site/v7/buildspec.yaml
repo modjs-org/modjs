@@ -12,6 +12,10 @@ phases:
     commands:
       - echo "Node.js version:"
       - node -v
+      - npm -v
+      - npm install -g npm@10.3.0
+      - echo "npm version after upgrade:"
+      - npm -v
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - npm cache clean --force
       - npm i
