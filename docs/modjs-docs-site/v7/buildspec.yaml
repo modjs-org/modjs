@@ -6,8 +6,6 @@ phases:
       nodejs: 20
     commands:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
-      - rm -rf node_modules
-      - rm -rf package-lock.json
       - npm cache clean --force
       # Remove any leftover symlinks from node_modules
       - npm ci --workspaces=false
