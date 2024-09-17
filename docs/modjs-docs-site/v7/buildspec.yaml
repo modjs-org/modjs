@@ -6,10 +6,17 @@ phases:
       nodejs: 20
     commands:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
+      # Remove existing node_modules and lock files
+      - rm -rf node_modules
+      - rm -f yarn.lock
+      - rm -f package-lock.json
+      # Reinstall dependencies with npm
       - npm install react
       - npm install react-dom
       - npm install react-router-dom
       - npm install styled-components
+      # Ensure no workspaces are used
+      - echo '{"private":true,"workspaces":["packages/core","packages/helpers","packages/icons","packages/utils","docs/modjs-docs-site/v7"]}' > package.json
       - npm install
   build:
     commands:
