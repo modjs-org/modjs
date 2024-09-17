@@ -11,6 +11,10 @@ phases:
       - npm install react-router-dom
       - npm install styled-components
       - npm install
+      - npm install @modjs/helpers
+      - npm install @modjs/utils
+      - npm install @modjs/icons
+      - npm install @modjs/core
   build:
     commands:
       - npm run build:docs
