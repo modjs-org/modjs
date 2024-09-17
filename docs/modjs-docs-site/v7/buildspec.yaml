@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      #TODO: use npm ci instead for automated env in order to enable caching and faster build
+      #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - npm install react
       - npm install react-dom
       - npm install react-router-dom
