@@ -5,9 +5,8 @@
     "packages/core",
     "packages/helpers",
     "packages/icons",
-    "packages/utils",
-    "docs/modjs-docs-site/v7"
-    ],
+    "packages/utils"
+  ],
   "private": true,
   "keywords": [
     "modjs",
