@@ -22,7 +22,6 @@ phases:
       # - npm install react-router-dom
       # - npm install styled-components
       # - npm install
-      - find node_modules -type l -exec rm -f {} \;
 
   build:
     commands:
