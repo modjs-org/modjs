@@ -50,12 +50,6 @@
     "publish:core": "npm run publish --workspace @modjs/core",
     "build:all": "npm-run-all -s build:helpers build:utils build:icons build:core build:docs"
   },
-  "dependencies": {
-    "@modjs/core": "^7.1.0",
-    "@modjs/helpers": "^7.0.0",
-    "@modjs/icons": "^7.1.1",
-    "@modjs/utils": "^7.0.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.24.5",
     "@babel/core": "^7.24.5",
