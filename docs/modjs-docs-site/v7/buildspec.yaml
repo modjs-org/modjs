@@ -9,6 +9,11 @@ phases:
       - npm cache clean --force
       # Remove any leftover symlinks from node_modules
       - npm ci --workspaces=false
+      - npm install next@14.2.2
+      - npm install @modjs/core --workspaces=false
+      - npm install @modjs/icons --workspaces=false
+      - npm install @modjs/helpers --workspaces=false
+      - npm install @modjs/utils --workspaces=false
       - echo "Printing package-lock.json contents:"
       - cat package-lock.json
       # - npm cache clean --force
@@ -18,7 +23,6 @@ phases:
       # - npm install styled-components
       # - npm install
       - find node_modules -type l -exec rm -f {} \;
-      - npm install next@14.2.2
 
   build:
     commands:
