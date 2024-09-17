@@ -13,10 +13,13 @@ phases:
       - npm install react-dom
       - npm install react-router-dom
       - npm install styled-components
-      - npm install --workspaces=false
+      - npm install @modjs/core
+      - npm install @modjs/helpers
+      - npm install @modjs/icons
+      - npm install @modjs/utils
   build:
     commands:
-      - npx next build
+      - npm run build:docs
   post_build:
     commands:
       - ls -la node_modules/@modjs
