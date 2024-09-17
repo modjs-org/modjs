@@ -7,6 +7,8 @@ phases:
     commands:
       #TODO: use npm ci instead for automated env in order to enable caching for faster build
       - npm cache clean --force
+      - ls -la node_modules/ #should fail?
+      - ls -la node_modules/@modjs #should fail?
       # Remove any leftover symlinks from node_modules
       - npm ci
       # - npm cache clean --force
