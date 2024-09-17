@@ -1,0 +1,292 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: |
+  SAM Template to create resources for the modjs-site: modjs.prashan.dev and www.modjs.prashan.dev
+
+Parameters:
+  DomainName:
+    Type: String
+    Description: Domain name 
+    Default: modjs.prashan.dev
+  WwwSubDomainName:
+    Type: String
+    Description: Sub Domain name 
+    Default: www.modjs.prashan.dev
+  SubjectAlternativeNames:
+    Type: String
+    Description: Additional domain names to secure all subdomains
+    Default: "*.modjs.prashan.dev"
+  HostedZoneName:
+    Type: String
+    Description: Name of the hosted zone that contains all DNS records
+    Default: modjs.prashan.dev
+  RootBucketName: 
+    Type: String
+    Description: S3 bucket for the apex domain
+    Default: modjs.prashan.dev
+  RootBucketRedirectToHostName:
+    Type: String
+    Description: Redirect Host name for the apex domain S3 bucket
+    Default: www.modjs.prashan.dev
+  RootBucketWebsiteEndpoint:
+    Type: String
+    Description: Website endpoint for the apex domain s3 bucket
+    Default: modjs.prashan.dev.s3-website-us-east-1.amazonaws.com
+  WwwBucketName:
+    Type: String
+    Description: S3 bucket for the www subdomain
+    Default: www.modjs.prashan.dev
+  CodeBuildProjectName:
+    Type: String
+    Description: Name of the codebuild project
+    Default: modjs-site-code-build
+  CodeBuildSpecLocation:
+    Type: String
+    Description: Location of the buildspec yaml file relative to the project root-site
+    Default: docs/modjs-docs-site/v7/buildspec.yaml
+  CodeBuildCodeRepo:
+    Type: String
+    Description: Code repository for modjs
+    Default: https://github.com/modjs-org/modjs
+  CodeBuildArtifactsLocation:
+    Type: String
+    Description: Artifacts location for codebuild
+    Default: www.modjs.prashan.dev
+  RootDomainCloudFrontDistroAliases:
+    Type: String
+    Description: Alternate domain names (CNAME) for the apex domain so that the site can be reached by domain name
+    Default: modjs.prashan.dev
+  WwwDomainCloudFrontDistroAliases:
+    Type: String
+    Description: Alternate domain names (CNAME) for the www domain so that the site can be reached by www subdomain
+    Default: www.modjs.prashan.dev
+
+Resources:
+  #ACM SSL certificate for the www domain and all sub domains
+  SecureCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Ref DomainName 
+      ValidationMethod: "DNS"    # Choose validation method: DNS or EMAIL
+      DomainValidationOptions:
+        - DomainName: !Ref DomainName
+          HostedZoneId: !Ref RootDomainHostedZoneId
+      SubjectAlternativeNames: #additional domain names to secure all sub domains
+        - !Ref SubjectAlternativeNames
+  #Hosted zone for the apex domain
+  RootDomainHostedZoneId:
+    Type: AWS::Route53::HostedZone  # Route 53 hosted zone for DNS validation
+    Properties:
+      Name: !Ref HostedZoneName
+
+  # A record for apex domain pointing to CloudFront distribution
+  RootDomainHostedZoneARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref RootDomainHostedZoneId
+      Name: !Ref DomainName
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt RootCloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2  # Hosted zone ID for CloudFront distributions (this is static)
+  
+  # A record for www domain pointing to CloudFront distribution
+  WwwDomainHostedZoneARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref RootDomainHostedZoneId #A record for the www subdomain resides in the same hosted zone as that of apex domain
+      Name: !Ref WwwSubDomainName
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt WwwCloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2  # Hosted zone ID for CloudFront distributions (this is static)
+
+  #S3 bucket with static website hosting enabled for the apex domain
+  RootBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref RootBucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      WebsiteConfiguration:
+        RedirectAllRequestsTo:
+          HostName: !Ref RootBucketRedirectToHostName
+          Protocol: https
+
+  #Cloudfront distribution for the apex domain configured as static site hosting
+  RootCloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - !Ref RootDomainCloudFrontDistroAliases
+        ViewerCertificate:
+          AcmCertificateArn: !Ref SecureCertificate
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+        Origins:
+          - DomainName: !Ref RootBucketWebsiteEndpoint
+            Id: !Sub apex-domain-origin-access-control
+            CustomOriginConfig:
+              OriginProtocolPolicy: http-only
+              HTTPPort: 80
+        Enabled: 'true'
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: !Sub apex-domain-origin-access-control
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6 
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_All #for max performance
+            
+  #-----------------------------------------------------------------------------------------------------
+  #S3 bucket with static website hosting enabled for the www subdomain which hosts the app code
+  WwwBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref WwwBucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      CorsConfiguration:
+        CorsRules:
+          - AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - POST
+            AllowedOrigins:
+              - '*'
+      WebsiteConfiguration:
+        IndexDocument: index
+        ErrorDocument: '404'
+
+  # S3 bucket policy for the www domain which hosts the app code
+  WwwBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WwwBucket
+      PolicyDocument:
+        Id: PolicyForCloudFrontPrivateContent
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowCloudFrontServicePrincipal
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub arn:aws:s3:::${WwwBucket}/*
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${WwwCloudFrontDistribution}
+
+  #Origin Access Control OAC for the www domain
+  WwwOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub www-domain-origin-access-control
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  #Cloudfront distribution for the www domain
+  WwwCloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+            - !Ref WwwDomainCloudFrontDistroAliases
+        ViewerCertificate:
+          AcmCertificateArn: !Ref SecureCertificate
+          SslSupportMethod: sni-only
+          MinimumProtocolVersion: TLSv1.2_2021
+        Origins:
+          - DomainName: !GetAtt WwwBucket.RegionalDomainName
+            Id: !Sub www-domain-origin-access-control
+            OriginAccessControlId: !GetAtt WwwOriginAccessControl.Id
+            S3OriginConfig: {}
+        Enabled: 'true'
+        DefaultRootObject: index
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: !Sub www-domain-origin-access-control
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_All
+
+  # IAM Role for CodeBuild
+  CodeBuildServiceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CodeBuildServiceRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: codebuild.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AWSCodeBuildDeveloperAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+
+  # #CodeBuild project for the root-site
+  CodeBuildProject:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Ref CodeBuildProjectName
+      Source:
+        Type: GITHUB
+        Location: !Ref CodeBuildCodeRepo
+        BuildSpec: !Ref CodeBuildSpecLocation
+      Artifacts:
+        Type: S3
+        Location: !Ref CodeBuildArtifactsLocation
+        EncryptionDisabled: true #Must disable or set to true for static site hosting
+        Packaging: NONE #Packaging NONE for static site hosting. Refer to codebuild console for more detail
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/amazonlinux2-x86_64-standard:5.0 #OS will be Amazon Linux
+        Type: LINUX_CONTAINER
+      ServiceRole: !GetAtt CodeBuildServiceRole.Arn
+      Triggers:
+        #INFO: For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository
+        Webhook: true          
+
+Outputs:
+  SecureCertificateArn:
+    Value: !Ref SecureCertificate
+  RootCloudFrontDistributionDomainName:
+    Value: !GetAtt RootCloudFrontDistribution.DomainName
+  RootCloudFrontDistributionId:
+    Value: !GetAtt RootCloudFrontDistribution.Id
+  RootBucketName:
+    Value: !Ref RootBucket
+  RootBucketWebsiteEndpoint:
+    Value: !GetAtt RootBucket.WebsiteURL
+  WwwCloudFrontDistributionDomainName:
+    Value: !GetAtt WwwCloudFrontDistribution.DomainName
+  WwwCloudFrontDistributionId:
+    Value: !GetAtt WwwCloudFrontDistribution.Id
+  WwwBucketName:
+    Value: !Ref WwwBucket
+  WwwBucketRegionalDomainName:
+    Value: !GetAtt WwwBucket.RegionalDomainName
+  CodeBuildProjectName:
+    Description: CodeBuild project for the root-site
+    Value: !Ref CodeBuildProject
+  CodeBuildServiceRoleArn:
+    Description: The ARN of the CodeBuild service role
+    Value: !GetAtt CodeBuildServiceRole.Arn

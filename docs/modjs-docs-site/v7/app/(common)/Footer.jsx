@@ -16,9 +16,7 @@ const ModFooter = () => {
                         alignItems="center"
                         mb={7}
                     >
-                        <Typography variant="small">
-                            Made with ♥ by www.fullstackpro.io
-                        </Typography>
+                        <Typography variant="small">Made with ♥</Typography>
                     </Box>
 
                     <Box
@@ -28,7 +26,7 @@ const ModFooter = () => {
                         mb={7}
                     >
                         <Typography variant="small">
-                            © 2024 www.fullstackpro.io
+                            © 2024 www.prashan.dev
                         </Typography>
                     </Box>
                     <Box
