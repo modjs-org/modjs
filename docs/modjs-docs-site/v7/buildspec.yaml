@@ -8,7 +8,7 @@ artifacts:
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 20.10.0
     commands:
       - echo "Node.js version:"
       - node -v
