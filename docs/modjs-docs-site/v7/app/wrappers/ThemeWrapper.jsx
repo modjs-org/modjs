@@ -3,10 +3,10 @@ import { ModThemeProvider } from '@modjs/utils'
 
 import ThemeContext from '../context/ThemeContext'
 // import darkTheme from '../../public/assets/themes/darkTheme'
-import lightTheme from '../../public/assets/themes/lightTheme'
+import darkTheme from '../../public/assets/themes/darkTheme'
 
 const ThemeWrapper = ({ children }) => {
-    const [theme, setTheme] = useState(lightTheme) //TODO: change theme based on time of day
+    const [theme, setTheme] = useState(darkTheme) //TODO: change theme based on time of day
 
     const value = {
         theme,
@@ -17,7 +17,7 @@ const ThemeWrapper = ({ children }) => {
         const currentTheme = JSON.parse(localStorage.getItem('theme'))
         setTheme(currentTheme)
         if (!currentTheme) {
-            setTheme(lightTheme) //TODO: change theme based on time of day
+            setTheme(darkTheme) //TODO: change theme based on time of day
         }
     }, [])
     return (

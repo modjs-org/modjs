@@ -76,7 +76,7 @@ export default function Page() {
                                 <Breadcrumbs>
                                     <Link
                                         variant="transparent"
-                                        href="/core"
+                                        href="/"
                                         width="auto"
                                         data-testid="breadcrumbs_core"
                                     >

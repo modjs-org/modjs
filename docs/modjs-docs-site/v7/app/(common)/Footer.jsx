@@ -16,7 +16,17 @@ const ModFooter = () => {
                         alignItems="center"
                         mb={7}
                     >
-                        <Typography variant="small">Made with ♥</Typography>
+                        <Typography variant="small">
+                            Made with ♥ by{' '}
+                            <Link
+                                href="https://www.prashan.dev"
+                                variant="inline"
+                                fs={0.75}
+                                color="success"
+                            >
+                                www.prashan.dev
+                            </Link>
+                        </Typography>
                     </Box>
 
                     <Box
